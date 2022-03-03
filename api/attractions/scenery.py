@@ -1,17 +1,16 @@
 """Part 1 - 2：開發旅遊景點 API
 """
-
-"""(A)取得不同分頁的旅遊景點列表資料，(B)也可以根據標題關鍵字篩選
+"""/api/attractions [取得景點資料列表]
+    (A)取得不同分頁的旅遊景點列表資料，(B)也可以根據標題關鍵字篩選
     1.取得query string(page)
     2.sql語句 > limit x,12 (限制每頁12筆)
-    3.處理數據庫資料 > json
+    3.處理資料 > json
     (B)也可以根據標題關鍵字篩選
     1.取得query string(keyword)
     2.sql語句 > WHERE?,LIKE?(篩選關鍵字)
-    3.處理數據庫資料 > json
+    3.處理資料 > json
 """
 
-from pickle import TRUE
 from flask import *
 scenery_bp=Blueprint("scenery", __name__)
 

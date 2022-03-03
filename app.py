@@ -6,6 +6,8 @@ app.config["DEBUG"]=True
 
 from api.attractions.scenery import scenery_bp
 app.register_blueprint(scenery_bp)
+from api.attractions.search_id import search_bp
+app.register_blueprint(search_bp)
 
 # Pages
 @app.route("/")
