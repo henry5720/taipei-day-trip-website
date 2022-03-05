@@ -2,7 +2,7 @@ from flask import *
 app=Flask(__name__)
 app.config["JSON_AS_ASCII"]=False
 app.config["TEMPLATES_AUTO_RELOAD"]=True
-# app.config["DEBUG"]=True
+app.config["DEBUG"]=True
 
 # 引入藍圖
 from api.attractions.scenery import scenery_bp

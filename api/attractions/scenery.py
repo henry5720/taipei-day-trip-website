@@ -107,9 +107,10 @@ def scan_attractions():
                     dict2["longitude"]=longitude
 
                     # 取得所需資料(圖片字串處理)
-                    images=images.split()
+                    images=images.split(",")
                     dict2["images"]=images
-                    
+                    # print(type(images))
+
                     list1.append(dict2) # 存放到 list1
                 # print(list1)
 
