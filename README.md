@@ -3,7 +3,6 @@
 1. **sudo apt update && sudo apt upgrade**
 	- [跟新](https://project.zhps.tp.edu.tw/ethan/2019/03/ubuntu-%E6%9B%B4%E6%96%B0%E8%88%87%E5%8D%87%E7%B4%9A/)
 2. **rsync / scp**
-	- rsync -ravz --progress -e 
 	- rsync -ravz --progress -e "ssh  -i aws-test.pem" [遠端機器] :~/
 3. **vim**
 	- [vim使用](https://zhuanlan.zhihu.com/p/68111471)
@@ -22,17 +21,16 @@
 ### ubuntu error
 1. **sudo apt update && sudo apt upgrade**
 	- [NO_PUBKEY](https://blog.wu-boy.com/2012/05/how-to-resolve-apt-get-no_pubkey-gpg-error/)
-	- [apt_pkg](ModuleNotFoundError: No module named 'apt_pkg' error)
+	- [apt_pkg](https://www.796t.com/article.php?id=223037)
 
 ### python
 - **code**
 	- [ ] 1. 巢狀資料結構(處理)
 		- for loop / pandas / (else...)
-	- [x] 2. (json > mysql) or (json > csv > mysql)
-		- [json > mysql](https://segmentfault.com/a/1190000024445924)
-		- 不確定,得再查資料
+	- [ ] 2. (json > mysql) or (json > csv > mysql)
+		- [MySQL8.0(json)](https://blog.csdn.net/lkforce/article/details/102940249)
 	- [ ] 3. mysql 取出資料 > 處理成json格式
-		- sql > json
+		- [json > mysql](https://segmentfault.com/a/1190000024445924)
 		- sql > python(dict&list) > json
 	- [ ] 4. %, {}.format, ... (占位符/格式化/...)
 - **mysql**
@@ -48,13 +46,5 @@
 	- [ ] 1. status code
 	- [ ] 2. api 返回 json 概念
 		- jsonify / json.dumps / 自訂Response，使用force_type()
-	- [ ] 3. retutn 什麼 / Response
-		- 前後端串接
-	- [ ] 4. cookie, session, token, jwt, oauth2
-***
-### javascript
-- [ ] 1. ajax / fetch
-- [ ] 2. fetch(get / post)取值
-- [ ] 3. Content-Type
-- [ ] 4. 箭頭函式
+	- [ ] 3. cookie, session, token, jwt, oauth2
 
