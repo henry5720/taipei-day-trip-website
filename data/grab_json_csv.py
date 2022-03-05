@@ -5,8 +5,9 @@
 """
 import json
 import csv
-import mysql.connector
+from pool import pool
 from mysql.connector import errors
+
 
 def get_csv():
     with open("taipei-attractions.json", mode="r", encoding="UTF-8") as f:
@@ -76,9 +77,9 @@ def table_sql():
     (5)修改表頭數據類型 / optional
 """
 try:
-    conn=mysql.connector.connect(option_files="my.conf")
-    cnx=conn.cursor()
-    print(conn.connection_id)
+    con=pool.get_connection()
+    cnx=con.cursor()
+    print(con.connection_id)
     sql="set sql_mode='no_engine_substitution';"
     cnx.execute(sql)
     print("修改模式")
@@ -101,9 +102,9 @@ try:
 except errors.Error as e:
     print(e)
 finally:
-    conn.commit()
+    con.commit()
     cnx.close()
-    conn.close()
+    con.close()
 
 
 
