@@ -1,3 +1,10 @@
+"""[測試] json > pandas > csv > mysql
+    1.讀取json(json.load) > 處理資料(for loop)
+"""
+
+from flask import *
+import pandas as pd
+import mysql.connector
 
 with open("taipei-attractions.json", mode="r", encoding="UTF-8") as file:
     data_json=json.load(file)

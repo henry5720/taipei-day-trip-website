@@ -1,3 +1,6 @@
+"""[測試] mysql > sql指令 && json
+"""
+
 from flask import *
 import json
 str1="1 2 3 4 5"
@@ -56,3 +59,29 @@ def get_sql(keyword,page):
     print(sql)
     return sql
 get_sql(keyword,page)
+
+
+# dict & list (for flask json)
+dict1={} # dict(第1層)
+list1=[] # dict(第1層) > list(第1層)
+# 遍歷資料
+for i in records:
+    dict2={} # dict(第2層)
+    # print(type(i))
+    dict2["id"]=i["id"]
+    dict2["name"]=i["stitle"]
+    dict2["category"]=i["CAT2"]
+    dict2["description"]=i["xbody"]
+    dict2["address"]=i["address"]
+    dict2["transport"]=i["info"]
+    dict2["mrt"]=i["MRT"]
+    dict2["latitude"]=i["latitude"]
+    dict2["longitude"]=i["longitude"]
+    dict2["images"]=i["file"].split()
+    list1.append(dict2)
+    dict1["data"]=list1
+    
+    # print(json.dumps(i["stitle"]))
+    # print(i["file"].split())
+    # print(type(i["file"
+# print(dict1)

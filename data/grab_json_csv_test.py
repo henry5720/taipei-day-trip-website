@@ -1,5 +1,5 @@
 """ Part 1 - 1：將景點資料存放至資料庫
-    1. 抓取所有景點資料(with開啟資料 > json法方讀取)
+    1. 抓取所有景點資料(with開啟資料 > json方法讀取)
     2. [a]處理資料(for loop) > [b]資料存到csv
     3. 存到mysql裡(json, csv, pandas?, numpy?, ...)
 """
@@ -8,7 +8,7 @@ import csv
 import mysql.connector
 from mysql.connector import errors
 
-"""1. 抓取所有景點資料(with開啟資料 > json法方讀取)
+"""1. 抓取所有景點資料(with開啟資料 > json方法讀取)
 """
 with open("taipei-attractions.json", mode="r", encoding="UTF-8") as file:
     data_json=json.load(file)
@@ -70,7 +70,7 @@ def get_data():
     return head_csv,csv_data
 
 # data=get_data()
-# print(get_data()[0])
+print(get_data()[1])
 
 """[b]資料存到csv
 """

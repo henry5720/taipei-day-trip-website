@@ -12,7 +12,7 @@
 from flask import *
 search_bp=Blueprint("search", __name__)
 
-from .pool import pool
+from data.pool import pool
 from mysql.connector import errors
 
 @search_bp.route("/api/attraction/<attractionId>", methods=["GET"])
@@ -43,21 +43,27 @@ def scan_attractions(attractionId):
         list1=[]
         dict2={}
         dict2["id"]=records["id"]
-        dict2["name"]=records["stitle"]
-        dict2["category"]=records["CAT2"]
-        dict2["description"]=records["xbody"]
-        dict2["address"]=records["address"]
-        dict2["transport"]=records["info"]
-        dict2["mrt"]=records["MRT"]
-        dict2["latitude"]=records["latitude"]
-        dict2["longitude"]=records["longitude"]
-        dict2["images"]=records["file"].split()
+        dict2["name"]=records["stitle"].strip("\"")
+        dict2["category"]=records["CAT2"].strip("\"")
+        dict2["description"]=records["xbody"].strip("\"")
+        dict2["address"]=records["address"].strip("\"")
+        dict2["transport"]=records["info"].strip("\"")
+        dict2["mrt"]=records["MRT"].strip("\"")
+        latitude=records["latitude"].strip("\"")
+        longitude=records["longitude"].strip("\"")
+        images=records["file"].strip("\"")
+
+        # 取得所需資料(轉成小數型)
+        latitude=float(latitude)
+        longitude=float(longitude)
+        dict2["latitude"]=latitude
+        dict2["longitude"]=longitude
+
+        # 取得所需資料(圖片字串處理)
+        images=images.split()
+        dict2["images"]=images
         list1.append(dict2)
         dict1["data"]=list1
-        # print(json.dumps(i["stitle"]))
-        # print(i["file"].split())
-        # print(type(i["file"]))
-        print(dict1)
         # con.commit()    
     except errors.Error as e:
         print(e)
