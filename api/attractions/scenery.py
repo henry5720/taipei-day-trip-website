@@ -107,7 +107,7 @@ def scan_attractions():
                     dict2["longitude"]=longitude
 
                     # 取得所需資料(圖片字串處理)
-                    images=images.split(",")
+                    images=images.split(",") # str >list
                     dict2["images"]=images
                     # print(type(images))
 
@@ -185,12 +185,13 @@ def scan_attractions():
                     dict2["longitude"]=longitude
 
                     # 取得所需資料(圖片字串處理)
-                    images=images.split()
+                    images=images.split(",") # str >list
                     dict2["images"]=images
-                    
+                    # print(type(images))
+
                     list1.append(dict2) # 存放到 list1
                 # print(list1)
-
+                
                 # 判斷 len(list) > 有無下一頁
                 if (len(list1)==13):
                     dict1["nextPage"]=page+1

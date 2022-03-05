@@ -60,8 +60,9 @@ def scan_attractions(attractionId):
         dict2["longitude"]=longitude
 
         # 取得所需資料(圖片字串處理)
-        images=images.split()
+        images=images.split(",")
         dict2["images"]=images
+        
         list1.append(dict2)
         dict1["data"]=list1
         # con.commit()    
