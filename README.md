@@ -1,15 +1,13 @@
-## Confuse(2022/3/4)
-### ubuntu
+# Confuse(2022/3/4)
+## ubuntu
 1. **sudo apt update && sudo apt upgrade**
 	- [跟新](https://project.zhps.tp.edu.tw/ethan/2019/03/ubuntu-%E6%9B%B4%E6%96%B0%E8%88%87%E5%8D%87%E7%B4%9A/)
 2. **rsync / scp**
-	- rsync -ravz --progress -e "ssh  -i aws-test.pem" [遠端機器] :~/
+	- rsync -ravz --progress -e "ssh -i aws-test.pem" [檔案] [遠端機器] :~/ (家目錄底下)
 3. **vim**
 	- [vim使用](https://zhuanlan.zhihu.com/p/68111471)
 4. **git**
-	 - sudo apt-get install git
-	 - git clone [url]
-	 - git checkout [branch]
+	- [git概念](https://www.youtube.com/watch?v=N6YQlPuAamw)
 5. **mysql**
 	- [安裝](https://ubunlog.com/zh-TW/MySQL-8-Ubuntu%E6%95%B8%E6%93%9A%E5%BA%AB/)
 	- [初始設定](https://www.albert-yu.com/blog/mysql%E8%A8%AD%E5%AE%9Aroot%E5%B8%B3%E8%99%9F%E5%AF%86%E7%A2%BC%E8%88%87%E5%88%9D%E5%A7%8B%E6%AC%8A%E9%99%90ubuntu-20-04/)
@@ -18,12 +16,12 @@
 	- [安裝3.10 > 跟新指令 > 切換版本](https://www.itsupportwale.com/blog/how-to-upgrade-to-python-3-10-on-ubuntu-18-04-and-20-04-lts/)
 	- [安裝pip](https://linuxize.com/post/how-to-install-pip-on-ubuntu-20.04/)
 
-### ubuntu error
+## ubuntu error
 1. **sudo apt update && sudo apt upgrade**
 	- [NO_PUBKEY](https://blog.wu-boy.com/2012/05/how-to-resolve-apt-get-no_pubkey-gpg-error/)
 	- [apt_pkg](https://www.796t.com/article.php?id=223037)
 
-### python
+## python
 - **code**
 	- [ ] 1. 巢狀資料結構(處理)
 		- for loop / pandas / (else...)

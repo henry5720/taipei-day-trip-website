@@ -21,10 +21,10 @@ from mysql.connector import errors
 @scenery_bp.route("/api/attractions", methods=["GET"])
 def scan_attractions():
     if (request.method=="GET"):
-        """1.取得query string > 處理相應api
-        """
+        """1.取得query string > 處理相應api"""
         page=request.args.get("page", default="0")
-        keyword=request.args.get("keyword", default=None)
+        keyword=request.args.get("keyword", default="")
+        
         try:
             # print(type(page))
             # query string 結果 > int(失敗: 輸入錯誤)
@@ -35,7 +35,7 @@ def scan_attractions():
             }
             return error
         # page是int && keyword 是預設值(表示未輸入) > (A)取得不同分頁的旅遊景點列表資料
-        if (type(page)==int)and(keyword==None)or(keyword==""):
+        if (type(page)==int)and(keyword==""):
             """連接數據庫 > 取得資料 > 處理資料(回傳指定格式資料)
                 處理資料: (A)取得不同分頁的旅遊景點列表資料
                 回傳指定格式資料: json.dumps()?, jsonify()?
