@@ -23,26 +23,32 @@
 
 ## python
 - **code**
-	- [ ] 1. 巢狀資料結構(處理)
-		- for loop / pandas / (else...)
-	- [ ] 2. (json > mysql) or (json > csv > mysql)
-		- [MySQL8.0(json)](https://blog.csdn.net/lkforce/article/details/102940249)
-	- [ ] 3. mysql 取出資料 > 處理成json格式
-		- [json > mysql](https://segmentfault.com/a/1190000024445924)
-		- sql > python(dict&list) > json
-	- [ ] 4. %, {}.format, ... (占位符/格式化/...)
+1. 巢狀資料結構(處理)
+	- for loop / pandas / (else...)
+2. (json > mysql) or (json > csv > mysql)
+	- [MySQL8.0(json)](https://blog.csdn.net/lkforce/article/details/102940249)
+3. mysql 取出資料 > 處理成json格式
+	- [json > mysql](https://segmentfault.com/a/1190000024445924)
+	- sql > python(dict&list) > json
+4. %, {}.format, ... (占位符/格式化/...)
 - **mysql**
-	- [ ] 1. connection pool
-		- 了解(python)如何實現連接池
-	- [ ] 2. json儲存問題(資料型態) 
-		- 直接存 / 轉成表格
-		- 編碼問題
-	- [ ] 3. 資料表設計
-		- 何時要分表?
-	- [ ] 4. sql語句(優化)
+1. connection pool
+	- 了解(python)如何實現連接池
+2. json儲存問題(資料型態) 
+	- 直接存 / 轉成表格
+	- 編碼問題
+3. 資料表設計
+	- 何時要分表?
+4. sql語句(優化)
 - **flask**
-	- [ ] 1. status code
-	- [ ] 2. api 返回 json 概念
-		- jsonify / json.dumps / 自訂Response，使用force_type()
-	- [ ] 3. cookie, session, token, jwt, oauth2
+1. status code
+2. api 返回 json 概念
+	- jsonify / json.dumps / 自訂Response，使用force_type()
+3. cookie, session, token, jwt, oauth2
 
+## javascript
+- [append重複元素](https://segmentfault.com/q/1010000007677851)
+- [DOM修改文字節點](https://blog.kkbruce.net/2013/10/js-dom-edit-text-node-select-innerText-or-textContent.html)
+- [Promise](https://www.bilibili.com/video/BV1QV411a7Hu/?spm_id_from=333.788)
+- [Promise.then中的值](https://www.wenyuanblog.com/blogs/javascript-how-to-return-value-in-promise.html#toc-heading-5)
+- [Intersection Observer API](https://medium.com/%E9%BA%A5%E5%85%8B%E7%9A%84%E5%8D%8A%E8%B7%AF%E5%87%BA%E5%AE%B6%E7%AD%86%E8%A8%98/%E8%AA%8D%E8%AD%98-intersection-observer-api-%E5%AF%A6%E4%BD%9C-lazy-loading-%E5%92%8C-infinite-scroll-c8d434ad218c)
