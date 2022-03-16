@@ -56,18 +56,6 @@ function render_page() {
     const i=right_box.children[1];
     i.textContent=scenery.category+" at "+scenery.mrt;
 
-    // [right_box]switch charge when click
-    const morning=document.querySelector("#morning");
-    const night=document.querySelector("#night");
-    const charge=document.querySelector("#charge");
-    morning.addEventListener("click", ()=>{
-        charge.textContent="新台幣 2000元";
-    });
-    night.addEventListener("click", ()=>{
-        charge.textContent="新台幣 2500元";
-    });
-
-    
     // [bottom_box] > li > p
     const bottom_box=document.querySelector(".bottom_box");
     const box_list=bottom_box.children;
@@ -79,12 +67,27 @@ function render_page() {
     p2.textContent=scenery.transport;
 }
 
+function switch_charge() {
+    // [right_box]switch charge when click
+    main_log("新增事件")
+    const morning=document.querySelector("#morning");
+    const night=document.querySelector("#night");
+    const charge=document.querySelector("#charge");
+    morning.addEventListener("click", ()=>{
+        charge.textContent="新台幣 2000元";
+    });
+    night.addEventListener("click", ()=>{
+        charge.textContent="新台幣 2500元";
+    });
+}
+
 function slideshow() {
     /* slideshow requirements
         0.initialize
         1.[click]arrow > change img
         2.span add click event
      */
+    main_log("新增輪播圖")
     const imgs=document.querySelectorAll(".scenery_imgs > li > img");
     const spans=document.querySelectorAll(".control_box > span");
     const dots=document.querySelectorAll(".control_box > ol > li");
@@ -146,11 +149,11 @@ function slideshow() {
     });
 }
 
-
 /* ==================== controller ==================== */
 window.addEventListener("load", async()=>{
     main_log("頁面加載")
     await get_data();
     await render_page();
+    await switch_charge();
     await slideshow();
 });

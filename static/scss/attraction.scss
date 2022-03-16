@@ -5,8 +5,8 @@ $font_color: #666;
 
 $width: (
     desktop: 1200px,
-    tablet: 600px,
-    phone: 300px
+    tablet: 100%,
+    phone: 100%
 );
 
 @mixin flex_type($type) {
@@ -55,7 +55,7 @@ $width: (
     }
 }
 
-/* ====================  ==================== */
+/* ==================== initialize ==================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -81,7 +81,7 @@ $width: (
     
 }
 
-/* ==================== 1200px ==================== */
+/* ==================== >1200px ==================== */
 @media screen and (min-width: 1200px) {
     /* ==================== header start ==================== */
     header {
@@ -264,7 +264,7 @@ $width: (
                                     }
                                     input[type=radio]:checked+label{
                                         border: 2px solid #fff;
-                                        background: #448899;
+                                        background: $main_color;
                                     }
                                 }
                             }
@@ -291,6 +291,483 @@ $width: (
             flex-direction: column;
             margin: 30px auto;
             width: map-get($width, desktop);
+            // background-color: #998844;
+            li {
+                margin: 20px 0;
+                // background-color: #448899;
+                i {
+                    font-weight: 700
+                }
+            }
+        }
+    }
+    /* ==================== main end ==================== */
+
+    /* ==================== footer start ==================== */
+    footer {
+        @include flex_type(center);
+        margin-top: 70px;
+        width: 100%;
+        height: 104px;
+        background-color: #757575;
+        .copyright {
+            line-height: 104px;
+            color: #fff;
+        }    
+    }
+    /* ==================== footer end ==================== */
+}
+
+/* ==================== 600px~1200px ==================== */
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+    /* ==================== header start ==================== */
+    header {
+        position: sticky;
+        top: 0;
+        border-bottom: 1px solid $sub_color;
+        width: 100%;
+        z-index: 1;
+        background-color: #fff;
+        nav {
+            @include flex_type(space-between);
+            margin: 0 auto;
+            width: map-get($width, tablet);
+            height: 54px;
+            // background-color: sandybrown;
+            h1 a {
+                margin-left: 10px;
+                width: 150px;
+                font-size: 30px;
+                font-weight: 700;
+                line-height: 54px;
+                color: $main_color;
+                // background-color: seagreen;
+            }
+            ul {
+                @include flex_type(space-between);
+                // background-color: blue;
+                a {
+                    padding: 0 10px;
+                    line-height: 54px;
+                }
+            }
+        }
+    }
+    /* ==================== header end ==================== */
+    
+    /* ==================== main start ==================== */
+    main {
+        .top_box {
+            @include flex_type(center);
+            padding: 40px 0;
+            border-bottom: 1px solid $sub_color;
+            width: map-get($width, tablet);
+            // background-color: #448899;
+            .left_box {
+                position: relative;
+                margin-left: 20px;
+                width: 50%;
+                height: 350px;
+                // background-color: #994411;
+                .scenery_imgs {
+                    position: relative;
+                    border-radius: 5px;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    background-color: $main_color;
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        opacity: 0;
+                    }
+                }
+
+                .control_box {
+                    position: absolute;
+                    top: 0;
+                    @include flex_type(space-between);
+                    align-items: center;
+                    border-radius: 5px;
+                    width: 100%;
+                    height: 100%;
+                    // background-color: #448899;
+                    span {
+                        display: block;
+                        margin: 0 10px;
+                        width: 36px;
+                        height: 36px;
+                        opacity: 0.7;
+                        cursor: pointer;
+                        // background-color: #E8E8E8;
+                        &:active {
+                            border: 1px solid #333;
+                            border-radius: 36px;
+                            transform: translateX(2px);
+                        }
+                    }
+                    span:first-of-type {
+                        background: url(../imgs/btn_leftArrow.png);
+                    }
+                    span:last-of-type {
+                        background: url(../imgs/btn_rightArrow.png);
+                    }
+                    ol {
+                        align-self: flex-end;
+                        display: flex;
+                        margin-bottom: 13px;
+                        li {
+                            margin-right: 12px;
+                            border: 1px solid #fff;
+                            border-radius: 12px;
+                            width: 12px;
+                            height: 12px;
+                            cursor: pointer;
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
+            .right_box {
+                @include flex_type(space-between);
+                flex-direction: column;
+                width: 50%;
+                height:  350px;
+                background-color: #fff;
+                margin: 0 20px;
+                // background-color: #448899;
+                h2 {
+                    height: 33px;
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 33px;
+                }
+                i {
+                    margin: 10px 0;
+                }
+                form {
+                    @include flex_type(space-between);
+                    flex-direction: column;
+                    padding: 10px;
+                    border-radius: 5px;
+                    width: 100%;
+                    height: 290px;
+                    background-color: $sub_color;
+                    h3 {
+                        font-weight: 700;
+                    }
+                    table {
+                        width: 100%;
+                        height: 100px;
+                        tr {
+                            td:first-of-type {
+                                width: 80px;
+                                height: 35px;
+                                font-weight: 700;
+                                line-height: 35px;
+                                // background-color: #994411;
+                            }
+                            ul {
+                                @include flex_type(flex-start);
+                                li {
+                                    position: relative;
+                                    width: 90px;
+                                    input[type=radio] {
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        line-height: 100%;
+                                        opacity: 0;
+                                        cursor: pointer;
+                                    }
+                                    label {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        border-radius: 100%;
+                                        width: 22px;
+                                        height: 22px;
+                                        cursor: pointer;
+                                        background-color: #fff;
+                                    }
+                                    span {
+                                        padding-left: 25px;
+                                    }
+                                    input[type=radio]:checked+label{
+                                        border: 2px solid #fff;
+                                        background: $main_color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    button {
+                        border: 0;
+                        border-radius: 5px;
+                        width: 150px;
+                        height: 40px;
+                        font-size: 19px;
+                        color: #fff;
+                        cursor: pointer;
+                        background-color: $main_color;
+                        &:active {
+                            border: 2px solid #333;
+                        }
+                    }
+                }
+            }
+        }
+        .bottom_box {
+            @include flex_type(space-between);
+            flex-direction: column;
+            margin: 30px auto;
+            padding: 0 20px;
+            width: map-get($width, tablet);
+            // background-color: #998844;
+            li {
+                margin: 20px 0;
+                // background-color: #448899;
+                i {
+                    font-weight: 700
+                }
+            }
+        }
+    }
+    /* ==================== main end ==================== */
+
+    /* ==================== footer start ==================== */
+    footer {
+        @include flex_type(center);
+        margin-top: 70px;
+        width: 100%;
+        height: 104px;
+        background-color: #757575;
+        .copyright {
+            line-height: 104px;
+            color: #fff;
+        }    
+    }
+    /* ==================== footer end ==================== */
+}
+
+/* ==================== <600px ==================== */
+@media screen and (max-width: 600px) {
+    /* ==================== header start ==================== */
+    header {
+        position: sticky;
+        top: 0;
+        border-bottom: 1px solid $sub_color;
+        width: 100%;
+        z-index: 1;
+        background-color: #fff;
+        nav {
+            @include flex_type(space-between);
+            margin: 0 auto;
+            width: map-get($width, tablet);
+            height: 54px;
+            // background-color: sandybrown;
+            h1 a {
+                margin-left: 10px;
+                width: 150px;
+                font-size: 30px;
+                font-weight: 700;
+                line-height: 54px;
+                color: $main_color;
+                // background-color: seagreen;
+            }
+            ul {
+                @include flex_type(space-between);
+                // background-color: blue;
+                a {
+                    padding: 0 10px;
+                    line-height: 54px;
+                }
+            }
+        }
+    }
+    /* ==================== header end ==================== */
+    
+    /* ==================== main start ==================== */
+    main {
+        .top_box {
+            @include flex_type(center);
+            flex-wrap: wrap;
+            padding: 40px 0;
+            border-bottom: 1px solid $sub_color;
+            width: map-get($width, tablet);
+            // background-color: #448899;
+            .left_box {
+                position: relative;
+                width: 100%;
+                height: 350px;
+                // background-color: #994411;
+                .scenery_imgs {
+                    position: relative;
+                    // border-radius: 5px;
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    background-color: $main_color;
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        border-radius: 5px;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        opacity: 0;
+                    }
+                }
+
+                .control_box {
+                    position: absolute;
+                    top: 0;
+                    @include flex_type(space-between);
+                    align-items: center;
+                    border-radius: 5px;
+                    width: 100%;
+                    height: 100%;
+                    // background-color: #448899;
+                    span {
+                        display: block;
+                        margin: 0 10px;
+                        width: 36px;
+                        height: 36px;
+                        opacity: 0.7;
+                        cursor: pointer;
+                        // background-color: #E8E8E8;
+                        &:active {
+                            border: 1px solid #333;
+                            border-radius: 36px;
+                            transform: translateX(2px);
+                        }
+                    }
+                    span:first-of-type {
+                        background: url(../imgs/btn_leftArrow.png);
+                    }
+                    span:last-of-type {
+                        background: url(../imgs/btn_rightArrow.png);
+                    }
+                    ol {
+                        align-self: flex-end;
+                        display: flex;
+                        margin-bottom: 13px;
+                        li {
+                            margin-right: 12px;
+                            border: 1px solid #fff;
+                            border-radius: 12px;
+                            width: 12px;
+                            height: 12px;
+                            cursor: pointer;
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
+            .right_box {
+                @include flex_type(space-between);
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                margin: 20px 10px;
+                background-color: #fff;
+                // background-color: #448899;
+                h2 {
+                    height: 33px;
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 33px;
+                }
+                i {
+                    margin: 20px 0;
+                }
+                form {
+                    @include flex_type(space-between);
+                    flex-direction: column;
+                    border-radius: 5px;
+                    padding: 15px 20px;
+                    width: 100%;
+                    height: 290px;
+                    background-color: $sub_color;
+                    h3 {
+                        font-weight: 700;
+                    }
+                    table {
+                        width: 100%;
+                        height: 100px;
+                        tr {
+                            td:first-of-type {
+                                width: 80px;
+                                height: 35px;
+                                font-weight: 700;
+                                line-height: 35px;
+                                // background-color: #994411;
+                            }
+                            ul {
+                                @include flex_type(flex-start);
+                                li {
+                                    position: relative;
+                                    width: 90px;
+                                    input[type=radio] {
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                        line-height: 100%;
+                                        opacity: 0;
+                                        cursor: pointer;
+                                    }
+                                    label {
+                                        position: absolute;
+                                        left: 0;
+                                        top: 0;
+                                        border-radius: 100%;
+                                        width: 22px;
+                                        height: 22px;
+                                        cursor: pointer;
+                                        background-color: #fff;
+                                    }
+                                    span {
+                                        padding-left: 25px;
+                                    }
+                                    input[type=radio]:checked+label{
+                                        border: 2px solid #fff;
+                                        background: $main_color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    button {
+                        border: 0;
+                        border-radius: 5px;
+                        width: 150px;
+                        height: 40px;
+                        font-size: 19px;
+                        color: #fff;
+                        cursor: pointer;
+                        background-color: $main_color;
+                        &:active {
+                            border: 2px solid #333;
+                        }
+                    }
+                }
+            }
+        }
+        .bottom_box {
+            @include flex_type(space-between);
+            flex-direction: column;
+            margin: 30px auto;
+            padding: 0 20px;
+            width: map-get($width, tablet);
             // background-color: #998844;
             li {
                 margin: 20px 0;
