@@ -30,7 +30,7 @@ img {
 
 /* >=1200px */
 @media screen and (min-width: 1200px) {
-    /* header start */
+    /* ==================== header start ==================== */
     header {
         position: sticky;
         top: 0;
@@ -39,7 +39,7 @@ img {
         background-color: #fff;
     }
     
-    nav {
+    header nav {
         display: flex;
         justify-content: space-between;
 
@@ -49,7 +49,7 @@ img {
         /* background-color: sandybrown; */
     }
     
-    nav h1 {
+    nav h1 a {
         width: 150px;
         font-size: 30px;
         font-weight: 700;
@@ -71,9 +71,9 @@ img {
         line-height: 54px;
         color: #666;
     }
-    /* header end */
+    /* ==================== header end ==================== */
     
-    /* menu start */
+    /* ==================== menu start ==================== */
     menu {
         display: flex;
         justify-content: center;
@@ -164,9 +164,9 @@ img {
         background-position: center center;
         background-color: #448899;
     }
-    /* menu end */
+    /* ==================== menu end ==================== */
     
-    /* main start */
+    /* ==================== main start ==================== */
     .container {
         display: grid;
         grid-template-columns: repeat(4,1fr);
@@ -242,7 +242,7 @@ img {
         color: #fff;
     }
 
-    /* footer end */
+    /* ==================== footer end ==================== */
 }
 
 /* 600px ~ 1200px */
@@ -264,7 +264,7 @@ img {
         /* background-color: sandybrown; */
     }
     
-    nav h1 {
+    nav h1 a {
         padding-left: 10px;
         font-size: 30px;
         font-weight: 700;
@@ -382,9 +382,9 @@ img {
         background-position: center center;
         background-color: #448899;
     }
-    /* menu end */
+    /* ==================== menu end ==================== */
 
-    /* main start */
+    /* ==================== main start ==================== */
     .container {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -417,7 +417,7 @@ img {
         height: 70%;
         max-height: 40vw;
         object-fit: cover;
-        background-color: yellowgreen;
+        /* background-color: #448899; */
     }
 
     .container h3 {
@@ -447,9 +447,9 @@ img {
         font-style: normal;
         /* background-color: darkblue; */
     }
-    /* main end */
+    /* ==================== main end ==================== */
     
-    /* footer start */
+    /* ==================== footer start ==================== */
     footer {
         display: flex;
         justify-content: center;
@@ -463,14 +463,12 @@ img {
         line-height: 104px;
         color: #fff;
     }
-
-    /* footer end */
-
+    /* ==================== footer end ==================== */
 }
 
 /* <=600px */
 @media screen and (max-width: 650px) {   
-    /* header start */
+    /* ==================== header start ==================== */
     header {
         position: sticky;
         top: 0;
@@ -488,7 +486,7 @@ img {
         /* background-color: sandybrown; */
     }
 
-    nav h1 {
+    nav h1 a {
         padding-left: 10px;
         width: 50%;
         font-size: 30px;
@@ -512,9 +510,9 @@ img {
         line-height: 54px;
         color: #666;
     }
-    /* header end */
+    /* ==================== header end ==================== */
 
-    /* menu start */
+    /* ==================== menu start ==================== */
     menu {
         display: flex;
         justify-content: center;
@@ -603,9 +601,9 @@ img {
         background-position: center center;
         background-color: #448899;
     }
-    /* menu end */
+    /* ==================== menu end ==================== */
 
-    /* main start */
+    /* ==================== main start ==================== */
     .container {
         display: grid;
         grid-template-columns: 1fr;
@@ -667,9 +665,9 @@ img {
         font-style: normal;
         /* background-color: darkblue; */
     }
-    /* main end */
+    /* ==================== main end ==================== */
     
-    /* footer start */
+    /* ==================== footer start ==================== */
     footer {
         display: flex;
         justify-content: center;
@@ -683,5 +681,5 @@ img {
         line-height: 104px;
         color: #fff;
     }
-    /* footer end */
+    /* ==================== footer end ==================== */
 }

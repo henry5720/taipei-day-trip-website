@@ -19,10 +19,11 @@
 
 let search_imgs=async (page, keyword)=>{
     // fetch > get json
-    const url="../api/attractions?page="+page+"&keyword="+keyword;
+    const url="/api/attractions?page="+page+"&keyword="+keyword;
     const response=await fetch(url);
     const json=await response.json();
     data=json.data;
+    // console.log(data[0].id);
 
     const ul=document.querySelector(".container");
     // set function(li > a > img,h3 > span,span > i,i)
@@ -65,6 +66,9 @@ let search_imgs=async (page, keyword)=>{
             span1.textContent=data[i].name;
             i1.textContent=data[i].mrt;
             i2.textContent=data[i].category;
+
+            // change a.href (/attraction/<id>)
+            a.setAttribute("href", "/attraction/"+data[i].id);
         }
     }
 
