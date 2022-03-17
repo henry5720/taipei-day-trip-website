@@ -159,6 +159,7 @@ img {
         border-radius: 0 5px 5px 0;
         width: 60px;
         height: 46px;
+        cursor: pointer;
         background: url(../imgs/icon_search.png) no-repeat;
         background-size: 30px;
         background-position: center center;
@@ -377,6 +378,7 @@ img {
         border-radius: 0 5px 5px 0;
         width: 60px;
         height: 46px;
+        cursor: pointer;
         background: url(../imgs/icon_search.png) no-repeat;
         background-size: 30px;
         background-position: center center;
@@ -596,6 +598,7 @@ img {
         border-radius: 0 5px 5px 0;
         width: 60px;
         height: 46px;
+        cursor: pointer;
         background: url(../imgs/icon_search.png) no-repeat;
         background-size: 30px;
         background-position: center center;

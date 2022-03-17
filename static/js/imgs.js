@@ -16,6 +16,11 @@
 */
 
 // function ==================================================
+function main_log(output) {
+    console.log("%c"+output, 
+    "color: #fff; background-color: #489; "
+    +"padding: 2px 5px; border-radius: 2px");
+}
 
 let search_imgs=async (page, keyword)=>{
     // fetch > get json
@@ -33,13 +38,13 @@ let search_imgs=async (page, keyword)=>{
     
     // show the query results
     if (data.length==0) {
-        console.log("執行search_imags: 查無資料");
+        main_log("執行search_imags: 查無資料");
         remove_lis();
         let h1=create("h1");
         ul.appendChild(h1);
         h1.textContent="沒有 "+keyword+" 的搜尋結果";
     }else {
-        console.log("執行search_imags: 存在資料");
+        main_log("執行search_imags: 存在資料");
             // for loop > append imgs and content
         for(i=0; i<data.length; i++) { // data.length=12
             // create elements
@@ -112,7 +117,7 @@ let lazy_load=async()=>{
         let isintersecting = e[0].isIntersecting;
         // console.log(e[0].intersectionRatio);
         if (isintersecting) {
-            await console.log("執行lazy_load: 顯示中...");
+            await main_log("顯示中")
             // stop calling api continuously
             let step=0;
             if (step==0) {
@@ -124,7 +129,7 @@ let lazy_load=async()=>{
                 step=0;
             }
         }else{
-            await console.log("執行lazy_load: 隱藏中...");
+            await console.log("隱藏中");
         }
     }, {
         root: null // options
@@ -133,12 +138,12 @@ let lazy_load=async()=>{
 }
 
 let remove_lis=()=>{
+    main_log("清除完成");
     const ul=document.querySelector(".container");
     while(ul.hasChildNodes())
     { 
         ul.removeChild(ul.firstChild); 
     }
-    console.log("清除完成");
 }
 
 // execute ==================================================
