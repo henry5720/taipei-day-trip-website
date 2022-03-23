@@ -82,7 +82,7 @@ let search_imgs=async (page, keyword)=>{
     next_page.textContent=json.nextPage
 }
 
-let get_next=async()=>{
+async function get_next() {
     const next_page=await document.querySelector(".next_page")
     const search=await document.querySelector("#search_text");
     page=await next_page.textContent;
@@ -176,3 +176,4 @@ window.addEventListener("load", async ()=>{
         search_imgs(page, keyword);
     });
 });
+
