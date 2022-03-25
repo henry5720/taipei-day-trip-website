@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request, make_response
-user_status_bp=Blueprint("user", __name__)
+user_system_bp=Blueprint("user", __name__)
 
 from data.pool import pool
 from mysql.connector import errors
@@ -107,10 +107,10 @@ def patch_user_signin():
         cursor.close()            
         conn.close()
         print("斷開數據庫連線")
-
+    
 # ==================== controller ====================
-@user_status_bp.route("/api/user", methods=["GET", "POST", "PATCH", "DELETE"])
-def user_status():
+@user_system_bp.route("/api/user", methods=["GET", "POST", "PATCH", "DELETE"])
+def user_system():
     if (request.method == "GET"):
         return get_user_status()
 

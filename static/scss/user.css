@@ -1,0 +1,165 @@
+body {
+  position: relative;
+}
+
+body .show {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+body .show .user_box {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0 auto;
+  border-radius: 5px;
+  width: 340px;
+  background-color: #fff;
+}
+
+body .show .user_box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+  height: 10px;
+  background: -webkit-gradient(linear, right top, left top, from(#337788), to(#66AABB));
+  background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
+}
+
+body .show .user_box li h3 {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 24px;
+  color: #666;
+}
+
+body .show .user_box li i {
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+body .show .user_box li i::before, body .show .user_box li i::after {
+  content: "";
+  width: 1px;
+  height: 20px;
+  background-color: #666;
+}
+
+body .show .user_box li i::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+body .show .user_box li i::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+body .show .user_box li:nth-child(2) form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body .show .user_box li:nth-child(2) form input, body .show .user_box li:nth-child(2) form button {
+  margin: 15px auto;
+  margin-bottom: 0;
+  border-radius: 5px;
+  width: 310px;
+  height: 47px;
+}
+
+body .show .user_box li:nth-child(2) form input {
+  padding-left: 15px;
+  border: 1px solid #CCCCCC;
+  outline: none;
+}
+
+body .show .user_box li:nth-child(2) form button {
+  border: 0;
+  font-size: 19px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #489;
+}
+
+body .show .user_box li:nth-child(2) form button:hover {
+  background: -webkit-gradient(linear, right top, left top, from(#337788), to(#66AABB));
+  background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
+}
+
+body .show .user_box li:nth-child(2) form button:active {
+  border: 2px solid #ccc;
+}
+
+body .show .user_box li:nth-child(3) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .show .user_box li:nth-child(3) span {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #666;
+}
+
+body .show .user_box li:nth-child(3) a {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 15px;
+  font-size: 16px;
+  color: #666;
+}
+
+body .show .user_box li:nth-child(3) a:hover {
+  text-decoration: underline;
+}
+
+body .hide {
+  display: none;
+}
+/*# sourceMappingURL=user.css.map */
