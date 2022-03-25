@@ -1,19 +1,36 @@
-# Confuse(2022/3/17)
+# Confuse(2022/3/22)
+
+![](https://i.imgur.com/HypZcRq.png)
 
 ## css
-> **sass**
-- [sass入門教學 (上)](https://ithelp.ithome.com.tw/articles/10244301)
-- [sass入門教學 (下)](https://ithelp.ithome.com.tw/articles/10245392)
+> **命名法**
+- [BEM，CSS 設計模式](https://chupai.github.io/posts/2104/bem/)
 
-> **input style**
-- [input[type=radio]](https://blog.csdn.net/qq_43258252/article/details/90750496)
+## python
+> **cookie**
+- [Flask Cookie 設定](https://www.maxlist.xyz/2019/05/11/flask-cookie/)
+- [expires & max_age差別](https://mrcoles.com/blog/cookies-max-age-vs-expires/)
 
-> **selector**
-- [nth-child()](https://blog.csdn.net/weixin_39015132/article/details/82015012)
-- [first-child & first-of-type](https://www.itread01.com/p/654989.html)
+> **JWT**
+- [JWT介紹&優缺點(重點)](https://my.oschina.net/u/4309098/blog/3414642)
+- [PyJWT簡介(附官方說明)](https://joehuang-pop.github.io/2020/03/01/Python-PyJWT-%E5%8A%A0%E8%A7%A3%E5%AF%86%E6%A8%A1%E7%B5%84-encode-decode/)
+- [PyJWT應用1](https://blog.csdn.net/yilovexing/article/details/104010890)
+- [PyJWT應用2](https://juejin.cn/post/6844903892157726733)
+- [PyJWT應用3](https://www.bbsmax.com/A/6pdDBNOqJw/)
+> **flask**
+- [request常見屬性](https://zhuanlan.zhihu.com/p/166445428)
+
+## mysql
+> **status**
+- [檢視資料庫連線數和狀態](https://www.itread01.com/p/1196977.html)
+
 ## javascript
-> **slisdeshow**
-- [一些方法: js/css/框架](https://www.itread01.com/content/1545239046.html)
-- [css opacity & animation](https://penueling.com/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/%E4%B8%8D%E5%AE%89%E8%A3%9D%E5%A5%97%E4%BB%B6-%E8%A3%BD%E4%BD%9C%E9%9F%BF%E6%87%89%E5%BC%8F-rwd-%E8%BC%AA%E6%92%AD%E6%95%88%E6%9E%9C-slider/)
-- [簡單輪播圖(思路清晰)](https://blog.csdn.net/qq_20495901/article/details/122936580?spm=1001.2014.3001.5502)
-- [無縫換圖](https://blog.csdn.net/lyclyc_/article/details/108043006)
+> **JS 的型別**
+- [Primitive type v.s Object types](https://medium.com/@jobboy0101/js%E5%9F%BA%E7%A4%8E-primitive-type-v-s-object-types-f88f7c16f225)
+> **submit / button**
+- [MDN-快速鍵設置(accesskey)](https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/input/submit)
+- [submit & button區別](https://harttle.land/2015/08/03/form-submit.html)
+
+> **form / input**
+- [input外是否需要form](https://blog.csdn.net/lamanchas/article/details/78753031)
+- [form提交方法](https://blog.csdn.net/zhangyuliang6430/article/details/95961574)
