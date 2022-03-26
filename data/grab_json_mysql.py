@@ -4,7 +4,6 @@
     3. 存到mysql裡(json格式)
 """
 import json
-from re import I
 from pool import pool
 from mysql.connector import errors
 

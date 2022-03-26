@@ -12,6 +12,9 @@ app.register_blueprint(scenery_bp)
 from api.attractions.search_id import search_bp
 app.register_blueprint(search_bp)
 
+from api.user.user import user_system_bp
+app.register_blueprint(user_system_bp)
+
 # Pages
 @app.route("/")
 def index():

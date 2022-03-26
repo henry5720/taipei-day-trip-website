@@ -223,6 +223,13 @@ $width: (
                     h3 {
                         font-weight: 700;
                     }
+                    #date{
+                        border: 0;
+                        padding: 0 10px;
+                        width: 193px;
+                        height: 35px;
+                        outline: none;
+                    }
                     table {
                         width: 100%;
                         height: 100px;
@@ -319,7 +326,7 @@ $width: (
 }
 
 /* ==================== 600px~1200px ==================== */
-@media screen and (min-width: 600px) and (max-width: 1200px) {
+@media screen and (min-width: 650px) and (max-width: 1200px) {
     /* ==================== header start ==================== */
     header {
         position: sticky;
@@ -449,6 +456,13 @@ $width: (
                 i {
                     margin: 10px 0;
                 }
+                #date{
+                    border: 0;
+                    padding: 0 10px;
+                    // width: 193px;
+                    height: 35px;
+                    outline: none;
+                }
                 form {
                     @include flex_type(space-between);
                     flex-direction: column;
@@ -557,7 +571,7 @@ $width: (
 }
 
 /* ==================== <600px ==================== */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     /* ==================== header start ==================== */
     header {
         position: sticky;
@@ -687,6 +701,13 @@ $width: (
                 }
                 i {
                     margin: 20px 0;
+                }
+                #date{
+                    border: 0;
+                    padding: 0 10px;
+                    // width: 193px;
+                    height: 35px;
+                    outline: none;
                 }
                 form {
                     @include flex_type(space-between);
