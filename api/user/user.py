@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request, make_response
 user_system_bp=Blueprint("user", __name__)
 
-from data.pool import pool
+from models.pool import pool
 from mysql.connector import errors
 
 import jwt
@@ -24,13 +24,13 @@ def get_user_status():
         payload=jwt.decode(user_inform, Auth.jwt_key, algorithms=["HS256"])
         print("解析請求token")
         if (payload != Auth.inform):
-            print("token遭到更改")
+            print("token驗證失敗")
             payload=None
     except jwt.PyJWTError as e:
         print("token驗證失敗", e)
         payload=None
     finally:
-        return jsonify(payload) 
+        return payload
 
 def post_user_signup():
     try:
@@ -112,7 +112,7 @@ def patch_user_signin():
 @user_system_bp.route("/api/user", methods=["GET", "POST", "PATCH", "DELETE"])
 def user_system():
     if (request.method == "GET"):
-        return get_user_status()
+        return jsonify(get_user_status())
 
     if (request.method == "POST"):
         return post_user_signup()

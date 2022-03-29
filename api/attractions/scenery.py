@@ -14,7 +14,7 @@
 from flask import *
 scenery_bp=Blueprint("scenery", __name__)
 
-from data.pool import pool
+from models.pool import pool
 from mysql.connector import errors
 
 

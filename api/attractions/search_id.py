@@ -12,7 +12,7 @@
 from flask import *
 search_bp=Blueprint("search", __name__)
 
-from data.pool import pool
+from models.pool import pool
 from mysql.connector import errors
 
 @search_bp.route("/api/attraction/<attractionId>", methods=["GET"])
