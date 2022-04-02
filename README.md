@@ -1,36 +1,48 @@
-# Confuse(2022/3/22)
+# Confuse(2022/3/31)
+###### tags: `#confuse`
 
-![](https://i.imgur.com/HypZcRq.png)
+## taipei_trip_website
+> [color=#3b75c6] **可以優化的點**
+- [loadoing動畫]
+- [feedback(指標懸停圖片時, input表單驗證)]
+- [MVC(clean code)]
 
-## css
-> **命名法**
-- [BEM，CSS 設計模式](https://chupai.github.io/posts/2104/bem/)
+![](https://i.imgur.com/ymv85Gg.png)
+
+
+## code
+- [Message Queue](https://medium.com/starbugs/%E8%AE%93%E4%BB%BB%E5%8B%99%E6%8E%92%E9%9A%8A%E5%90%A7-message-queue-1-de949e274c43)
 
 ## python
-> **cookie**
-- [Flask Cookie 設定](https://www.maxlist.xyz/2019/05/11/flask-cookie/)
-- [expires & max_age差別](https://mrcoles.com/blog/cookies-max-age-vs-expires/)
+> **Object Oriented Programming**
+- [notion筆記](https://helpful-act-d01.notion.site/Python-1700f437ea3241f69f18f907e2c99ab0)
+- [class到底在幹嘛](https://www.zhihu.com/question/266521768)
 
-> **JWT**
-- [JWT介紹&優缺點(重點)](https://my.oschina.net/u/4309098/blog/3414642)
-- [PyJWT簡介(附官方說明)](https://joehuang-pop.github.io/2020/03/01/Python-PyJWT-%E5%8A%A0%E8%A7%A3%E5%AF%86%E6%A8%A1%E7%B5%84-encode-decode/)
-- [PyJWT應用1](https://blog.csdn.net/yilovexing/article/details/104010890)
-- [PyJWT應用2](https://juejin.cn/post/6844903892157726733)
-- [PyJWT應用3](https://www.bbsmax.com/A/6pdDBNOqJw/)
-> **flask**
-- [request常見屬性](https://zhuanlan.zhihu.com/p/166445428)
-
+> **判斷日期合法性**
+- [datetime](https://www.pynote.net/archives/1295)
 ## mysql
-> **status**
-- [檢視資料庫連線數和狀態](https://www.itread01.com/p/1196977.html)
+> **foreign key**
+- [ON DELETE & ON UPDATE](https://b-l-u-e-b-e-r-r-y.github.io/post/ForeignKey/)
 
 ## javascript
-> **JS 的型別**
-- [Primitive type v.s Object types](https://medium.com/@jobboy0101/js%E5%9F%BA%E7%A4%8E-primitive-type-v-s-object-types-f88f7c16f225)
-> **submit / button**
-- [MDN-快速鍵設置(accesskey)](https://developer.mozilla.org/zh-TW/docs/Web/HTML/Element/input/submit)
-- [submit & button區別](https://harttle.land/2015/08/03/form-submit.html)
+> **code**
+- [cannot read property of undefined](https://cloud.tencent.com/developer/article/1883677)
+- [Object](https://cloud.tencent.com/developer/article/1883677)
 
-> **form / input**
-- [input外是否需要form](https://blog.csdn.net/lamanchas/article/details/78753031)
-- [form提交方法](https://blog.csdn.net/zhangyuliang6430/article/details/95961574)
+> **URL**
+- [相關參數](https://seanacnet.com/js/location/)
+
+> **數據類型**
+- [基礎數據類型問題](https://zhuanlan.zhihu.com/p/73173638)
+- [js深拷貝(圖好懂)](https://zhuanlan.zhihu.com/p/51438893)
+
+> **this**
+- [this指向問題](https://www.zhihu.com/question/353757734/answer/964557747)
+- [call()、apply()、bind()](https://realdennis.medium.com/javascript-%E8%81%8A%E8%81%8Acall-apply-bind%E7%9A%84%E5%B7%AE%E7%95%B0%E8%88%87%E7%9B%B8%E4%BC%BC%E4%B9%8B%E8%99%95-2f82a4b4dd66)
+
+> **react**
+- [簡介(連結: 重新介紹 JavaScipt, 3個心法)](https://askie.today/react-main-concepts-part-1/)
+- [create-react-app (底下推薦閱讀: js重構)](https://zhuanlan.zhihu.com/p/149712752)
+- [製作navbar](https://vocus.cc/article/60195f22fd897800012aabe3)
+- [簡單作品及網頁](https://chinese.freecodecamp.org/news/portfolio-app-using-react/)
+- [React + Redux(概念圖)](https://github.com/sorrycc/blog/issues/1)

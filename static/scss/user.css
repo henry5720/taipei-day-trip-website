@@ -137,15 +137,6 @@ body .show .user_box li:nth-child(3) {
           justify-content: center;
 }
 
-body .show .user_box li:nth-child(3) span {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  margin-top: 15px;
-  font-size: 16px;
-  color: #666;
-}
-
 body .show .user_box li:nth-child(3) a {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -157,6 +148,15 @@ body .show .user_box li:nth-child(3) a {
 
 body .show .user_box li:nth-child(3) a:hover {
   text-decoration: underline;
+}
+
+body .show_span {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 15px;
+  font-size: 16px;
+  color: #666;
 }
 
 body .hide {

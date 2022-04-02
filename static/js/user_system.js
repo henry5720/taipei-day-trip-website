@@ -46,6 +46,7 @@ function main_log(output) {
     +"padding: 2px 5px; border-radius: 2px");
 }
 
+/* ---------- 未登入: 增加登入功能 ---------- */
 // [點擊] 登入/註冊 > 彈出section(預設signin_box)
 function user_box_show() {
     main_log("新增:點擊彈出");
@@ -175,6 +176,7 @@ function click_btn() {
     });
 }
 
+let user_info;
 // ajax > /api/user (GET, POST, PATCH, DELETE)
 async function get_user_api() {
     main_log("get_user_api");
@@ -191,11 +193,12 @@ async function get_user_api() {
     if (back_json != null) {
         console.log("登入中")
         user_status.textContent="登出系統";
-        return false;
+        user_info=back_json;
+        return true;
     } else {
         console.log("登出中")
         user_status.textContent="登入/註冊";
-        return true;
+        return false;
     }
 }
 async function patch_user_api(front_json) {
@@ -255,28 +258,27 @@ async function delete_user_api() {
     }
 }
 
-// [點擊]登出 > delete_user_api()
+/* ---------- 已登入: 增加會員功能 ---------- */
+// [點擊]登出系統 > delete_user_api()
 function user_sign_out() {
-    main_log("新增:點擊登出")
+    main_log("新增:點擊登出");
     const user_action=document.querySelector("#user_action");
     user_action.addEventListener("click", ()=>{
         delete_user_api();
     });
 }
 
-/* ==================== controller ==================== */
-window.addEventListener("load", async ()=>{
-    main_log("頁面刷新:初始化");
-    const form_signin=document.forms["form_signin"];
-    const form_signup=document.forms["form_signup"];
-    let form_using=form_signin;
-    if (await get_user_api()) {
-        user_box_show();
-        user_box_switch();
-    } else {
-        user_sign_out();
-    }
-    await input_onchange(form_using, 0);
-    await main_log("新增:驗證功能");
-    await click_btn();
-});
+// [點擊]預定行程 > 跳轉網頁
+function click_booking() {
+    main_log("新增:點擊預定");
+    const booking_action=document.querySelector("#booking_action");
+    booking_action.addEventListener("click", async ()=>{
+        console.log("click");
+        if (await get_user_api()) {
+            jump();
+        } else {
+            user_box_jump();
+        }
+    });
+}
+

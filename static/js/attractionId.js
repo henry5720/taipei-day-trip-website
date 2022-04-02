@@ -69,7 +69,7 @@ function render_page() {
 
 function switch_charge() {
     // [right_box]switch charge when click
-    main_log("新增事件")
+    main_log("新增:切換報價")
     const morning=document.querySelector("#morning");
     const night=document.querySelector("#night");
     const charge=document.querySelector("#charge");
@@ -87,7 +87,7 @@ function slideshow() {
         1.[click]arrow > change img
         2.span add click event
      */
-    main_log("新增輪播圖")
+    main_log("新增:輪播圖")
     const imgs=document.querySelectorAll(".scenery_imgs > li > img");
     const spans=document.querySelectorAll(".control_box > span");
     const dots=document.querySelectorAll(".control_box > ol > li");
@@ -149,6 +149,14 @@ function slideshow() {
     });
 }
 
+function start_booking_btn() {
+    main_log("新增:開始預訂行程");
+    start_booking=document.querySelector("#start_booking");
+    start_booking.addEventListener("click", ()=>{
+        post_booking_api();
+    });
+}
+
 /* ==================== controller ==================== */
 window.addEventListener("load", async()=>{
     main_log("頁面加載")
@@ -156,4 +164,5 @@ window.addEventListener("load", async()=>{
     await render_page();
     await switch_charge();
     await slideshow();
+    await start_booking_btn();
 });

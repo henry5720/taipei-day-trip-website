@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../static/scss/user.css">
     <script type="text/javascript" src="../static/js/attractionId.js"></script>
     <script type="text/javascript" src="../static/js/user_system.js"></script>
+    <script type="text/javascript" src="../static/js/booking.js"></script>
+    <script type="text/javascript" src="../static/js/controller.js"></script>
     <title>台北一日遊</title>
 </head>
 <body>
@@ -17,7 +19,7 @@
                 <a href="/">台北一日遊</a>
             </h1>
             <ul>
-                <li>
+                <li id="booking_action">
                     <a href="#">預定行程</a>
                 </li>
                 <li id="user_action">
@@ -26,7 +28,7 @@
             </ul>    
         </nav>
     </header>
-        <section class="hide">
+    <section class="hide">
         <ul id="signin" class="user_box">
             <li>
                 <h3>登入會員帳號</h3>
@@ -63,7 +65,6 @@
             </li>
         </ul>
     </section>
-
     <main>
         <div class="top_box">
             <div class="left_box">
@@ -110,7 +111,7 @@
                             <td id="charge">新台幣 2000元</td>
                         </tr>
                     </table>
-                    <button>開始預訂行程</button>
+                    <button id="start_booking" type="button">開始預訂行程</button>
                 </form>
             </div>
         </div>

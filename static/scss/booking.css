@@ -1,0 +1,545 @@
+/* ==================== initialize ==================== */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Noto Sans TC, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+}
+
+* a {
+  text-decoration: none;
+}
+
+* li {
+  list-style: none;
+}
+
+* i {
+  font-style: normal;
+}
+
+* img {
+  display: block;
+}
+
+* h2, * p {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+* span {
+  font-weight: 700;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* ==================== main start ==================== */
+  /* ==================== main end ==================== */
+  /* ==================== main_none start ==================== */
+  /* ==================== main_none end ==================== */
+  /* ==================== footer start ==================== */
+  /* ==================== footer end ==================== */
+}
+
+body main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+}
+
+body main .main_top {
+  margin: 0 auto;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+body main .main_top h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+}
+
+body main .main_top .check {
+  position: relative;
+}
+
+body main .main_top .check .check_delete {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: url("/static/imgs/icon_delete.png");
+}
+
+body main .main_top .check img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: #666;
+}
+
+body main .main_top .check ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main .main_top .check ul li {
+  color: #448899;
+}
+
+body main .info-box {
+  border-bottom: 1px solid #E8E8E8;
+}
+
+body main .info-box ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main .info-box ul li {
+  margin-top: 15px;
+  height: 100%;
+}
+
+body main .info-box ul li input {
+  border: 1px solid #E8E8E8;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  height: 38px;
+  outline: none;
+  color: #000;
+}
+
+body main .confirm {
+  margin: 0 auto;
+  height: 180px;
+}
+
+body main .confirm span {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+body main .confirm button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  border: 0;
+  border-radius: 5px;
+  width: 173px;
+  height: 36px;
+  font-size: 19px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #489;
+}
+
+body main .confirm button:hover {
+  background: -webkit-gradient(linear, right top, left top, from(#337788), to(#66AABB));
+  background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
+}
+
+body main .confirm button:active {
+  border: 2px solid #ccc;
+}
+
+body .main_none {
+  margin: 0 auto;
+}
+
+body .main_none .main_none__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .main_none .main_none__box h2 {
+  margin: 40px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+}
+
+body .main_none .main_none__box i {
+  margin-bottom: 40px;
+}
+
+body footer {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  background-color: #757575;
+}
+
+body footer .copyright {
+  line-height: 104px;
+  color: #fff;
+}
+
+/* ==================== >1200px ==================== */
+@media screen and (min-width: 1200px) {
+  body {
+    /* ==================== header start ==================== */
+    /* ==================== header end ==================== */
+  }
+  body header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #E8E8E8;
+    width: 100%;
+    z-index: 1;
+    background-color: #fff;
+  }
+  body header nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 auto;
+    width: 1200px;
+    height: 54px;
+  }
+  body header nav h1 a {
+    width: 150px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 54px;
+    color: #448899;
+  }
+  body header nav ul {
+    width: 175px;
+  }
+  body header nav ul a {
+    float: left;
+    padding-right: 20px;
+    line-height: 54px;
+  }
+  body main {
+    width: 1200px;
+  }
+  body main .main_top {
+    padding: 0 100px;
+    padding-bottom: 40px;
+    width: 100%;
+  }
+  body main .main_top .check {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  body main .main_top .check img {
+    height: 200px;
+  }
+  body main .main_top .check ul {
+    margin-left: 30px;
+    height: 170px;
+  }
+  body main .main_top .check ul li:first-of-type {
+    margin-bottom: 5px;
+    font-weight: 700;
+  }
+  body main .main_top .check .check_delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  body main .info-box {
+    margin: 0 auto;
+    padding: 20px 100px 45px 100px;
+    width: 100%;
+    height: 320px;
+  }
+  body main .confirm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 45px 100px 60px 100px;
+    width: 100%;
+  }
+  body .main_none {
+    width: 1200px;
+  }
+  body .main_none .main_none__box {
+    margin: 0 100px;
+  }
+}
+
+/* ==================== 600px~1200px ==================== */
+@media screen and (min-width: 600px) and (max-width: 1200px) {
+  body {
+    /* ==================== header start ==================== */
+    /* ==================== header end ==================== */
+  }
+  body header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #E8E8E8;
+    width: 100%;
+    z-index: 1;
+    background-color: #fff;
+  }
+  body header nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    height: 54px;
+  }
+  body header nav h1 a {
+    margin-left: 10px;
+    width: 150px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 54px;
+    color: #448899;
+  }
+  body header nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body header nav ul a {
+    padding: 0 10px;
+    line-height: 54px;
+  }
+  body main {
+    width: 100%;
+  }
+  body main .main_top {
+    width: 85%;
+  }
+  body main .main_top .check {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  body main .main_top .check img {
+    height: 200px;
+  }
+  body main .main_top .check ul {
+    margin-left: 30px;
+    height: 170px;
+  }
+  body main .main_top .check ul li:first-of-type {
+    margin-bottom: 5px;
+    font-weight: 700;
+  }
+  body main .main_top .check_delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  body main .info-box {
+    margin: 0 auto;
+    padding: 20px 0 45px 0;
+    width: 85%;
+    height: 320px;
+  }
+  body main .confirm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 85%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 45px 0 60px 0;
+  }
+  body .main_none {
+    width: 100%;
+  }
+  body .main_none .main_none__box {
+    margin: 0 100px;
+  }
+}
+
+/* ==================== <600px ==================== */
+@media screen and (max-width: 600px) {
+  body {
+    /* ==================== header start ==================== */
+    /* ==================== header end ==================== */
+  }
+  body header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #E8E8E8;
+    width: 100%;
+    z-index: 1;
+    background-color: #fff;
+  }
+  body header nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    height: 54px;
+  }
+  body header nav h1 a {
+    margin-left: 10px;
+    width: 150px;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 54px;
+    color: #448899;
+  }
+  body header nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  body header nav ul a {
+    padding: 0 10px;
+    line-height: 54px;
+  }
+  body main {
+    width: 100%;
+    padding: 0 10px;
+  }
+  body main .main_top {
+    margin: 0 auto;
+    width: 100%;
+  }
+  body main .main_top h2 {
+    width: 100%;
+  }
+  body main .main_top .check {
+    width: 100%;
+  }
+  body main .main_top .check img {
+    width: 100%;
+  }
+  body main .main_top .check ul {
+    padding-top: 20px;
+    height: 200px;
+  }
+  body main .main_top .check ul li:first-of-type {
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  body main .main_top .check_delete {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+  }
+  body main .confirm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 50px 10px;
+    width: 100%;
+  }
+  body .info-box {
+    margin: 0 auto;
+    padding: 20px 0 45px 0;
+    width: 100%;
+  }
+  body .main_none {
+    width: 100%;
+    padding-left: 10px;
+  }
+}
+/*# sourceMappingURL=booking.css.map */

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        .head-3{font-weight: bold;font-size: 30px;}
+    </style>
+    <script type="text/babel">
+        // ==================== React.createElement ====================
+/*         class MyHead extends React.Component{
+            render() {
+                return React.createElement("h"+this.props.level,
+                {onClick:this.clickHandler}, "Hello World");
+            }
+            clickHandler(e) {
+            console.log("觸發點擊事件");
+            console.log(this);
+            }
+        }
+*/        
+        class MyHead extends React.Component{
+            constructor(props) {
+                super(props);
+                this.state={color:"red"};
+            }
+            render() {
+                // 在屬性中註冊事件處理器 onclick => onClick
+                return <div className={"head-"+this.props.level}
+                        style={{color:this.state.color}}
+                        onClick={this.clickHandler.bind(this)}
+                        onMouseOver={this.mouseOverHandler.bind(this)}
+                        >Hello World</div>;
+            }
+            // 事件處理器的第一個參數, 取得 Event Object
+            clickHandler(e) { 
+                // this 預設沒有綁定任何物件, 印出 undefined
+                this.setState({color:"blue"}); // render() 使用bind(this)
+                console.log("觸發點擊事件");
+                console.log(this); 
+            }
+            mouseOverHandler(e) {
+                this.setState({color:"green"});
+            }
+        }
+
+        window.addEventListener("load",()=>{
+            // let myComponent=React.createElement(MyHead, {level:"3"});
+            ReactDOM.render(<MyHead level="3" />, document.getElementById("root"));
+        });
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

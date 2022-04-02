@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台北一日遊</title>    
+    <link rel="stylesheet" href="../static/scss/booking.css">
+    <link rel="stylesheet" href="../static/scss/user.css">
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/javascript" src="../static/js/user_system.js"></script>
+    <script type="text/javascript" src="../static/js/booking.js"></script>
+    <script type="text/babel">
+        class Header extends React.Component{
+            constructor(props) {
+                super(props);
+            }
+            render() {
+                return <nav>
+                            <h1>
+                                <a href="/">台北一日遊</a>
+                            </h1>
+                            <ul>
+                                <li id="booking_action">
+                                    <a href="#">預定行程</a>
+                                </li>
+                                <li id="user_action">
+                                    <a href="#"
+                                    >登入/註冊</a>
+                                </li>
+                            </ul>
+                        </nav>
+            }
+
+        }
+        window.addEventListener("load",()=>{
+            ReactDOM.render(<Header />, document.querySelector("header"));
+            console.log("render");
+        });
+    </script>
+    <script type="text/javascript">
+        /* ==================== controller ==================== */
+        window.addEventListener("load", async()=>{
+            main_log("頁面刷新:初始化");
+            const form_signin=document.forms["form_signin"];
+            const form_signup=document.forms["form_signup"];
+            let form_using=form_signin;
+            await get_user_api();
+            if (await get_booking_api()) {
+                user_sign_out();
+                click_booking();
+                console.log(journey_info);
+                if (journey_info != null) {
+                    const user_name=document.querySelector("#user_name"); 
+                    user_name.textContent=user_info.data.name;
+
+                    const check_img=document.querySelector(".check > img");
+                    check_img.src=journey_info.data.attraction.images;
+                    const scene_name=document.querySelector("#scene_name");
+                    scene_name.textContent="台北一日遊 : "+journey_info.data.attraction.name;
+
+                    const journey_info_list=document.querySelectorAll(".check-list > li > i");
+                    console.log(journey_info_list);
+                    journey_info_list.forEach(i => {
+                        // console.log(i);
+                        journey_info_list[0].textContent=journey_info.data.date;
+                        if (journey_info.data.time == "morning") {
+                            journey_info_list[1].textContent="早上9點到下午4點"
+                        } else {
+                            journey_info_list[1].textContent="下午4點到晚上9點"
+                        }
+                        journey_info_list[2].textContent="新台幣 "+journey_info.data.price+" 元";
+                        journey_info_list[3].textContent=journey_info.data.attraction.address;
+                    });
+                    const total=document.querySelector("#total");
+                    total.textContent="新台幣 "+journey_info.data.price+" 元";
+                    const main_none=document.querySelector(".main_none");
+                    main_none.style.display="none";
+                    trash_can();
+                } else {
+                    const main=document.querySelector("main");
+                    main.style.display="none";
+
+                    const user_name=document.querySelector("#box__user"); 
+                    user_name.textContent=user_info.data.name;
+
+                }
+            } else {
+                jump_index();
+            }
+        });
+    </script>
+</head>
+<body>
+    <header></header>
+    <section class="hide">
+        <ul id="signin" class="user_box">
+            <li>
+                <h3>登入會員帳號</h3>
+                <i class="cross"></i>
+            </li>
+            <li>
+                <form action="" name="form_signin">
+                    <input id="signin_email" name="email" type="email" placeholder="輸入電子信箱">
+                    <input id="signin_pwd" name="pwd" type="password" placeholder="輸入密碼">
+                    <button id="signin_btn" type="button">登入帳戶</button> 
+                </form>
+            </li>
+            <li>
+                <span class="hide">提示錯誤訊息</span>
+                <a class="change_box" href="#">還沒有帳戶? 點此註冊</a>
+            </li>
+        </ul>
+        <ul id="signup" class="hide">
+            <li>
+                <h3>註冊會員帳號</h3>
+                <i class="cross"></i>
+            </li>
+            <li>
+                <form action="" name="form_signup" method="post">
+                    <input id="signin_name" name="name" type="text" placeholder="輸入姓名">
+                    <input id="signup_email" name="email" type="email" placeholder="輸入電子信箱">
+                    <input id="signup_pwd" name="pwd" type="password" placeholder="輸入密碼">
+                    <button id="signup_btn" type="button">註冊新帳戶</button>    
+                </form>
+            </li>
+            <li>
+                <span class="hide">提示錯誤訊息</span>
+                <a class="change_box" href="#">已經有帳戶了? 點此登入</a>
+            </li>
+        </ul>
+    </section>
+    <main>
+        <div class="main_top">
+            <h2>
+                <p>您好，</p>
+                <p id="user_name">henry</p>
+                <p>，待預訂的行程如下：</p>
+            </h2>
+            <div class="check">
+                <div class="check_delete"></div>
+                <img src="https://www.travel.taipei/d_upload_ttn/sceneadmin/pic/11000848.jpg" alt="">
+                <ul class="check-list">
+                    <li id="scene_name">台北一日遊：平安鐘</li>
+                    <li>
+                        <span>日期：</span>
+                        <i>2021-04-23</i>
+                    </li>
+                    <li>
+                        <span>時間：</span>
+                        <i>2021-04-23</i>
+                    </li>
+                    <li>
+                        <span>費用：</span>
+                        <i>2021-04-23</i>
+                    </li>
+                    <li>
+                        <span>地點：</span>
+                        <i>2021-04-23</i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <form class="info-box">
+            <ul>
+                <li>
+                    <h2>您的聯絡資訊</h2>
+                </li>
+                <li>
+                    <label for="">聯絡姓名：</label>
+                    <input type="text">        
+                </li>
+                <li>
+                    <label for="">連絡信箱：</label>
+                    <input type="text">        
+                </li>
+                <li>
+                    <label for="">手機號碼：</label>
+                    <input type="text">        
+                </li>
+                <li>
+                    <span>請保持手機暢通，準時到達，導覽人員將用手機與您聯繫，務必留下正確的聯絡方式。</span>
+                </li>
+            </ul>
+        </form>
+        <form class="info-box">
+            <ul>
+                <li>
+                    <h2>信用卡付款資訊</h2>
+                </li>
+                <li>
+                    <label for="">卡片號碼：</label>
+                    <input type="text">        
+                </li>
+                <li>
+                    <label for="">過期時間：</label>
+                    <input type="text">        
+                </li>
+                <li>
+                    <label for="">驗證密碼：</label>
+                    <input type="text">        
+                </li>
+            </ul>
+        </form>
+        <div class="confirm">
+            <span id="total">總價：新台幣 2000 元</span>
+            <button>確認訂購並付款</button>
+        </div>
+    </main>
+    <div class="main_none">
+        <div class="main_none__box">
+            <h2>
+                <p>您好，</p>
+                <p id="box__user">henry</p>
+                <p>，待預訂的行程如下：</p>
+            </h2>
+            <i>目前沒有任何待預訂的行程</i>
+        </div>
+    </div>
+    <footer>
+        <div class="copyright">COPYRIGHT © 2021 台北一日遊</div>
+    </footer>
+</body>
+</html>
