@@ -14,6 +14,10 @@ app.register_blueprint(search_bp)
 
 from api.user.user import user_system_bp
 app.register_blueprint(user_system_bp)
+from api.booking.booking import booking_bp
+app.register_blueprint(booking_bp)
+from api.orders.orders import orders_bp
+app.register_blueprint(orders_bp)
 
 # Pages
 @app.route("/")
