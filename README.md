@@ -16,5 +16,5 @@
 > **request**
 - [產生http請求](https://blog.gtwang.org/programming/python-requests-module-tutorial/)
 > **訂單編號**
-- [订单号生成策略](https://zhuanlan.zhihu.com/p/140752950)
-- [关于订单号的生成](https://zhuanlan.zhihu.com/p/27424850)
+- [生成策略](https://zhuanlan.zhihu.com/p/140752950)
+- [關於單號](https://zhuanlan.zhihu.com/p/27424850)
