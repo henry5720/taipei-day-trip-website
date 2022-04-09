@@ -43,7 +43,6 @@ function get_front_json() {
     console.log(front_json);
     front_json=JSON.stringify(front_json);
     return front_json
-    
 }
 
 async function post_booking_api() {

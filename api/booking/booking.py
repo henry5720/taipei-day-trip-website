@@ -40,7 +40,7 @@ def get_journey(member_id):
         cursor.execute(sql)
         schedule=cursor.fetchone()
         print("查詢行程完成", id(sql))
-        print(schedule)
+        # print(schedule)
 
         # ---------- 查詢景點資料 ----------
         if (schedule != None):

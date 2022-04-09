@@ -113,8 +113,30 @@ body {
                         color: #000 ;
                     }
                 }
+                .form-group {
+                    @include flex_type(flex-start);
+                    margin-top: 15px;
+                    height: 100%;
+                    .control-label {
+                        line-height: 38px;
+                    }
+                    .form-control {
+                        border: 1px solid $sub_color;
+                        border-radius: 5px;
+                        padding: 10px;
+                        width: 200px;
+                        height: 38px;
+                        outline: none;
+                        color: #000 ;
+                    }
+                }
+            }
+            #message {
+                margin-top: 15px;
+                color: orangered;
             }
         }
+
         .confirm {
             margin: 0 auto;
             height: 180px;
@@ -140,6 +162,7 @@ body {
                 }
             }    
         }
+
     }
     /* ==================== main end ==================== */
 
@@ -176,6 +199,8 @@ body {
     }
     /* ==================== footer end ==================== */
 }
+
+
 
 
 /* ==================== >1200px ==================== */
@@ -252,8 +277,9 @@ body {
                 flex-direction: column;
                 padding: 45px 100px 60px 100px;
                 width: 100%;
-            }    
+            }
         }
+
         .main_none{
             width: 1200px;
             .main_none__box{
