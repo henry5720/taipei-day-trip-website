@@ -22,10 +22,24 @@ img {
     display: none;
 }
 
+header nav ul li:hover a {
+    text-decoration: underline;
+}
+
 .container h1 {
     margin: 0 auto;
     font-size: 30px;
     color: #448899;
+}
+
+.container li:hover {
+    transition: .3s;
+    transform: scale(1.03);
+}
+
+.search button:hover {
+    transition: .2s;
+    background-size: 33px;
 }
 
 /* >=1200px */
@@ -188,6 +202,8 @@ img {
         height: 100%;
         /* background-color: hotpink; */
     }
+
+
 
     .container a {
         flex: 1;

@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify, request
 orders_bp=Blueprint("orders", __name__)
+
 import json
 import requests
 
@@ -7,8 +8,10 @@ from models.pool import pool
 from mysql.connector import errors
 
 from ..user.user import get_user_status, error_massage
-from datetime import date
-from api.booking.booking import get_journey
+
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # ==================== model ====================
 """ ---------- api/orders ---------- """
@@ -112,8 +115,8 @@ def select_order_number(member_id):
 def payment_info(record):
     orders=request.get_json()
     prime=orders["prime"]
-    partner="partner_Tri7Rb7WdWdFz2ZR1iPa2SEmzUg7KFeDeR3dn4TYX2Tl9prVjNt4Xw5h"
-    merchant_id="henry5720_ESUN"
+    partner=os.getenv("PARTNER")
+    merchant_id=os.getenv("MERCHANT_ID")
     price=orders["order"]["price"]
     name=orders["order"]["contact"]["name"]
     email=orders["order"]["contact"]["email"]
