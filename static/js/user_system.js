@@ -102,9 +102,12 @@ function input_onchange(form_using, i) {
     email.addEventListener("blur", ()=>{
         if (email_validate(form_using)) {
             span[i].className="hide";
+            email.style.outline="1.2px solid #489"; 
         } else {
             span[i].className="show_span";
-            span[i].textContent="輸入錯誤: 信箱 QQ";
+            span[i].textContent="輸入錯誤: 信箱";
+            span[i].style.color="red";
+            email.style.outline="1.2px solid red";
         }
     });
 
@@ -112,9 +115,12 @@ function input_onchange(form_using, i) {
     pwd.addEventListener("blur", ()=>{
         if (pwd_validate(form_using)) {
             span[i].className="hide";
+            pwd.style.outline="1.2px solid #489"; 
         } else {
             span[i].className="show_span";
-            span[i].textContent="輸入錯誤: 密碼 QQ";
+            span[i].textContent="尚未輸入: 密碼";
+            span[i].style.color="red";
+            pwd.style.outline="1.2px solid red";
         }
     });
     
@@ -123,9 +129,12 @@ function input_onchange(form_using, i) {
         name.addEventListener("blur", ()=>{
             if (name_validate(form_using)) {
                 span[i].className="hide";
+                name.style.outline="1.2px solid #489"; 
             } else {
                 span[i].className="show_span";
-                span[i].textContent="輸入錯誤: 姓名 QQ";
+                span[i].textContent="尚未輸入: 姓名";
+                span[i].style.color="red";
+                name.style.outline="1.2px solid red";
             }
         });
     }
@@ -150,7 +159,8 @@ function click_btn() {
         }
         else {
             span[0].className="show_span";
-            span[0].textContent="輸入有錯誤 QQ";
+            span[0].textContent="輸入內容有誤 :(";
+            span[0].style.color="red";
         }
     });
 
@@ -170,8 +180,9 @@ function click_btn() {
             post_user_api(JSON.stringify(front_json));
         }
         else {
-            span[0].className="show_span";
-            span[0].textContent="輸入有錯誤 QQ";
+            span[1].className="show_span";
+            span[1].textContent="輸入內容有誤 :(";
+            span[1].style.color="red";
         }
     });
 }
