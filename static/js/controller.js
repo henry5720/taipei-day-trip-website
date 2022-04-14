@@ -1,4 +1,12 @@
 /* ==================== controller ==================== */
+/* document.onreadystatechange=function(){
+    console.log(document.readyState);
+    if(document.readyState=="complete"){
+        const wrapper=document.querySelector(".wrapper");
+        wrapper.style.display="none";
+    }
+}
+ */
 window.addEventListener("load", async ()=>{
     main_log("load:載入完成");
     const wrapper=document.querySelector(".wrapper");
