@@ -12,6 +12,8 @@ async function api_order_get(num) {
     });
     back_json=await response.json();
     // console.log(back_json);
+
+
 }
 function handle_back_json() {
     console.log(back_json);
@@ -33,6 +35,7 @@ function handle_back_json() {
 /* ==================== controller ==================== */
 window.addEventListener("load", async ()=>{
     main_log("頁面刷新:初始化");
+
     if (await get_user_api()) {
         user_sign_out();
     } else {
@@ -42,4 +45,6 @@ window.addEventListener("load", async ()=>{
     order_num=location.search.split("=")[1]
     await api_order_get(order_num);
     handle_back_json();
+    const wrapper=document.querySelector(".wrapper");
+    wrapper.style.display="none";
 });

@@ -2,6 +2,8 @@
 window.addEventListener("load", async()=>{
     main_log("頁面刷新:初始化");
     await get_user_api();
+    const wrapper=document.querySelector(".wrapper");
+
     if (await get_booking_api()) {
         user_sign_out();
         click_booking();
@@ -33,15 +35,19 @@ window.addEventListener("load", async()=>{
             const main_none=document.querySelector(".main_none");
             main_none.style.display="none";
             trash_can();
+            wrapper.style.display="none";
+
         } else {
             const main=document.querySelector("main");
             main.style.display="none";
 
             const user_name=document.querySelector("#box__user"); 
             user_name.textContent=user_info.data.name;
+            wrapper.style.display="none";
 
         }
     } else {
         jump_index();
     }
+
 });

@@ -104,7 +104,7 @@ function input_onchange(form_using, i) {
             span[i].className="hide";
         } else {
             span[i].className="show_span";
-            span[i].textContent="輸入錯誤: 信箱 QQ"
+            span[i].textContent="輸入錯誤: 信箱 QQ";
         }
     });
 

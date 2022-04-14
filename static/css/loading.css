@@ -1,0 +1,29 @@
+.wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 50;
+}
+.loading {
+    width: 100px;
+    height: 100px;
+    background:  no-repeat center center;
+    background-size: contain;
+    background-image: url("/static/imgs/loading.gif");
+    z-index: 100;
+}
+
+.wrapper_low {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100px;
+    background-color: #fff;
+    z-index: 50;
+}
