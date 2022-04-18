@@ -157,6 +157,7 @@ function start_booking_btn() {
     });
 }
 
+
 /* ==================== controller ==================== */
 window.addEventListener("load", async()=>{
     main_log("頁面加載")

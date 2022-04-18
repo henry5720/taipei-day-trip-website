@@ -81,6 +81,10 @@ $width: (
     
 }
 
+header nav ul li:hover a {
+    text-decoration: underline;
+}
+
 /* ==================== >1200px ==================== */
 @media screen and (min-width: 1200px) {
     /* ==================== header start ==================== */
@@ -139,7 +143,7 @@ $width: (
                     width: 100%;
                     height: 100%;
                     overflow: hidden;
-                    background-color: $main_color;
+                    background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
                     img {
                         position: absolute;
                         top: 0;
@@ -286,8 +290,11 @@ $width: (
                         color: #fff;
                         cursor: pointer;
                         background-color: $main_color;
+                        &:hover {
+                            background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
+                        }
                         &:active {
-                            border: 2px solid #333;
+                            border: 2px solid #ccc;
                         }
                     }
                 }
@@ -382,7 +389,7 @@ $width: (
                     width: 100%;
                     height: 100%;
                     overflow: hidden;
-                    background-color: $main_color;
+                    background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
                     img {
                         position: absolute;
                         top: 0;
@@ -530,8 +537,11 @@ $width: (
                         color: #fff;
                         cursor: pointer;
                         background-color: $main_color;
+                        &:hover {
+                            background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
+                        }
                         &:active {
-                            border: 2px solid #333;
+                            border: 2px solid #ccc;
                         }
                     }
                 }
@@ -627,7 +637,7 @@ $width: (
                     width: 100%;
                     height: 100%;
                     overflow: hidden;
-                    background-color: $main_color;
+                    background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
                     img {
                         position: absolute;
                         top: 0;
@@ -776,8 +786,11 @@ $width: (
                         color: #fff;
                         cursor: pointer;
                         background-color: $main_color;
+                        &:hover {
+                            background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
+                        }
                         &:active {
-                            border: 2px solid #333;
+                            border: 2px solid #ccc;
                         }
                     }
                 }

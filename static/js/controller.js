@@ -1,8 +1,15 @@
 /* ==================== controller ==================== */
+/* document.onreadystatechange=function(){
+    console.log(document.readyState);
+    if(document.readyState=="complete"){
+        const wrapper=document.querySelector(".wrapper");
+        wrapper.style.display="none";
+    }
+}
+ */
 window.addEventListener("load", async ()=>{
-    main_log("頁面刷新:初始化");
-    const form_signin=document.forms["form_signin"];
-    const form_signup=document.forms["form_signup"];
+    main_log("load:載入完成");
+    const wrapper=document.querySelector(".wrapper");
     let form_using=form_signin;
     if (await get_user_api()) {
         user_sign_out();
@@ -14,5 +21,7 @@ window.addEventListener("load", async ()=>{
         click_btn();
     }
     click_booking();
-
+    wrapper.style.display="none";
 });
+
+

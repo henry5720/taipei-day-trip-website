@@ -3,6 +3,7 @@ user_system_bp=Blueprint("user", __name__)
 
 from models.pool import pool
 from mysql.connector import errors
+from models.my_conn_pool import dbconfig,MySQLPool
 
 import jwt
 from datetime import datetime, timedelta
@@ -18,6 +19,7 @@ class Auth:
     jwt_key="cryptic"
     inform={}
 
+# [解析]JWT解碼
 def get_user_status():
     try:
         user_inform=request.cookies.get("user_inform", None)
@@ -32,48 +34,40 @@ def get_user_status():
     finally:
         return payload
 
+# [註冊]新增數據庫資料
 def post_user_signup():
-    try:
-        Auth.inform=request.get_json()
-        conn=pool.get_connection()
-        print("連接數據庫完成: ", conn.connection_id)
-        cursor=conn.cursor(dictionary=True)
-        sql=""" CREATE TABLE IF NOT EXISTS `member`(
-                `id` BIGINT PRIMARY KEY AUTO_INCREMENT,
-                `name` VARCHAR(64) NOT NULL,
-                `email` VARCHAR(64) NOT NULL,
-                `password` VARCHAR(64) NOT NULL
-                );
+    Auth.inform=request.get_json()
+    my_pool=MySQLPool(**dbconfig)
+    sql=""" CREATE TABLE IF NOT EXISTS `member`(
+            `id` BIGINT PRIMARY KEY AUTO_INCREMENT,
+            `name` VARCHAR(64) NOT NULL,
+            `email` VARCHAR(64) NOT NULL,
+            `password` VARCHAR(64) NOT NULL
+            );
+        """
+    my_pool.execute(sql)
+    print("創建資料表")
+    sql=""" SELECT `id` FROM `member`
+            WHERE `email` = '%s';
+        """ %(Auth.inform["email"])
+    record=my_pool.execute(sql)
+    print(record)
+    if (len(Auth.inform) == 3)and(record == []):
+        record={"ok": True}
+        sql=""" INSERT INTO
+                `member`(`name`, `email`, `password`) 
+                VALUES(%s, %s, %s);
             """
-        cursor.execute(sql)
-        print("創建資料表完成")
-        sql=""" SELECT `id` FROM `member`
-                WHERE `email` = '%s';
-            """ %(Auth.inform["email"])
-        cursor.execute(sql)
-        record=cursor.fetchone()
-        if (len(Auth.inform) == 3)and(record == None):
-            record={"ok": True}
-            sql=""" INSERT INTO
-                    `member`(`name`, `email`, `password`) 
-                    VALUES(%s, %s, %s);
-                """
-            val=(Auth.inform["name"], Auth.inform["email"], Auth.inform["password"])
-            cursor.execute(sql, val)
-            cursor.close()
-            conn.commit()
-            print("註冊會員成功")
-        elif (len(Auth.inform) == 3)and(record != None):
-            record=error_massage("email already in use")
-        else:
-            record=error_massage("input error")
-    except Exception as e:
-        print(e)
-        record=error_massage("server error")
-    finally:
-        conn.close()
-        return jsonify(record)
+        val=(Auth.inform["name"], Auth.inform["email"], Auth.inform["password"])
+        my_pool.execute(sql, val, True)
+        print("註冊會員")
+    elif (len(Auth.inform) == 3)and(record != []):
+        record=error_massage("email already in use")
+    else:
+        record=error_massage("input error")
+    return jsonify(record)
 
+# [登入] 查詢數據庫資料
 def patch_user_signin():
     try:
         email=request.get_json()["email"]
@@ -127,4 +121,44 @@ def user_system():
         Auth.inform={}
         return response
 
-
+def old_post():
+    try:
+        Auth.inform=request.get_json()
+        conn=pool.get_connection()
+        print("連接數據庫完成: ", conn.connection_id)
+        cursor=conn.cursor(dictionary=True)
+        sql=""" CREATE TABLE IF NOT EXISTS `member`(
+                `id` BIGINT PRIMARY KEY AUTO_INCREMENT,
+                `name` VARCHAR(64) NOT NULL,
+                `email` VARCHAR(64) NOT NULL,
+                `password` VARCHAR(64) NOT NULL
+                );
+            """
+        cursor.execute(sql)
+        print("創建資料表完成")
+        sql=""" SELECT `id` FROM `member`
+                WHERE `email` = '%s';
+            """ %(Auth.inform["email"])
+        cursor.execute(sql)
+        record=cursor.fetchone()
+        if (len(Auth.inform) == 3)and(record == None):
+            record={"ok": True}
+            sql=""" INSERT INTO
+                    `member`(`name`, `email`, `password`) 
+                    VALUES(%s, %s, %s);
+                """
+            val=(Auth.inform["name"], Auth.inform["email"], Auth.inform["password"])
+            cursor.execute(sql, val)
+            cursor.close()
+            conn.commit()
+            print("註冊會員成功")
+        elif (len(Auth.inform) == 3)and(record != None):
+            record=error_massage("email already in use")
+        else:
+            record=error_massage("input error")
+    except Exception as e:
+        print(e)
+        record=error_massage("server error")
+    finally:
+        conn.close()
+        return jsonify(record)

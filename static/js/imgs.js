@@ -27,8 +27,11 @@ let search_imgs=async (page, keyword)=>{
     const url="/api/attractions?page="+page+"&keyword="+keyword;
     const response=await fetch(url);
     const json=await response.json();
+    const loading_low=document.querySelector(".wrapper_low");
     data=json.data;
     // console.log(data[0].id);
+
+    loading_low.style.display="flex";
 
     const ul=document.querySelector(".container");
     // set function(li > a > img,h3 > span,span > i,i)
@@ -43,6 +46,7 @@ let search_imgs=async (page, keyword)=>{
         let h1=create("h1");
         ul.appendChild(h1);
         h1.textContent="沒有 "+keyword+" 的搜尋結果";
+        loading_low.style.display="none";
     }else {
         main_log("執行search_imags: 存在資料");
             // for loop > append imgs and content
@@ -75,6 +79,7 @@ let search_imgs=async (page, keyword)=>{
             // change a.href (/attraction/<id>)
             a.setAttribute("href", "/attraction/"+data[i].id);
         }
+
     }
 
     // record the required data (nextPage)
@@ -85,6 +90,8 @@ let search_imgs=async (page, keyword)=>{
 async function get_next() {
     const next_page=await document.querySelector(".next_page")
     const search=await document.querySelector("#search_text");
+    const loading_low=document.querySelector(".wrapper_low");
+
     page=await next_page.textContent;
     keyword=await search.value;
 
@@ -99,10 +106,12 @@ async function get_next() {
         await console.log("執行get_next(B): "+page, keyword);
         await search_imgs(page, keyword);
     }else if (page == "" && keyword == "輸入景點名稱查詢") {
+        loading_low.style.display="none";
         page=null;
         keyword=null;
         await console.log("執行get_next(C): "+page, keyword);
     }else {
+        loading_low.style.display="none";
         page=null;
         keyword=search.value;
         await console.log("執行get_next(D): "+page, keyword);
@@ -145,6 +154,10 @@ let remove_lis=()=>{
         ul.removeChild(ul.firstChild); 
     }
 }
+
+// function show_loading() {
+//     if img.complete
+// }
 
 // execute ==================================================
 

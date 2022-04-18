@@ -114,6 +114,10 @@
   display: block;
 }
 
+header nav ul li:hover a {
+  text-decoration: underline;
+}
+
 /* ==================== >1200px ==================== */
 @media screen and (min-width: 1200px) {
   /* ==================== header start ==================== */
@@ -177,7 +181,8 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #448899;
+    background: -webkit-gradient(linear, right top, left top, from(#337788), to(#66AABB));
+    background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
   }
   main .top_box .left_box .scenery_imgs img {
     position: absolute;
@@ -352,8 +357,12 @@
     cursor: pointer;
     background-color: #448899;
   }
+  main .top_box .right_box form button:hover {
+    background: -webkit-gradient(linear, right top, left top, from(#337788), to(#66AABB));
+    background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
+  }
   main .top_box .right_box form button:active {
-    border: 2px solid #333;
+    border: 2px solid #ccc;
   }
   main .bottom_box {
     display: -webkit-box;
@@ -464,7 +473,8 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #448899;
+    background: -webkit-gradient(linear, right top, left top, from(#337788), to(#66AABB));
+    background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
   }
   main .top_box .left_box .scenery_imgs img {
     position: absolute;
@@ -639,8 +649,12 @@
     cursor: pointer;
     background-color: #448899;
   }
+  main .top_box .right_box form button:hover {
+    background: -webkit-gradient(linear, right top, left top, from(#337788), to(#66AABB));
+    background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
+  }
   main .top_box .right_box form button:active {
-    border: 2px solid #333;
+    border: 2px solid #ccc;
   }
   main .bottom_box {
     display: -webkit-box;
@@ -752,7 +766,8 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #448899;
+    background: -webkit-gradient(linear, right top, left top, from(#337788), to(#66AABB));
+    background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
   }
   main .top_box .left_box .scenery_imgs img {
     position: absolute;
@@ -928,8 +943,12 @@
     cursor: pointer;
     background-color: #448899;
   }
+  main .top_box .right_box form button:hover {
+    background: -webkit-gradient(linear, right top, left top, from(#337788), to(#66AABB));
+    background: linear-gradient(270deg, #337788 0%, #66AABB 100%);
+  }
   main .top_box .right_box form button:active {
-    border: 2px solid #333;
+    border: 2px solid #ccc;
   }
   main .bottom_box {
     display: -webkit-box;

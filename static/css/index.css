@@ -22,10 +22,24 @@ img {
     display: none;
 }
 
+header nav ul li:hover a {
+    text-decoration: underline;
+}
+
 .container h1 {
     margin: 0 auto;
     font-size: 30px;
     color: #448899;
+}
+
+.container li:hover {
+    transition: .3s;
+    transform: scale(1.03);
+}
+
+.search button:hover {
+    transition: .2s;
+    background-size: 33px;
 }
 
 /* >=1200px */
@@ -188,6 +202,8 @@ img {
         height: 100%;
         /* background-color: hotpink; */
     }
+
+
 
     .container a {
         flex: 1;
@@ -474,44 +490,38 @@ img {
     header {
         position: sticky;
         top: 0;
+        border-bottom: 1px solid #E8E8E8;
         width: 100%;
-        z-index: 2;
+        z-index: 1;
         background-color: #fff;
     }
-
-    nav {
+    header nav {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         margin: 0 auto;
         width: 100%;
         height: 54px;
-        /* background-color: sandybrown; */
     }
-
-    nav h1 a {
-        padding-left: 10px;
-        width: 50%;
+    header nav h1 a {
+        margin-left: 10px;
+        width: 150px;
         font-size: 30px;
         font-weight: 700;
         line-height: 54px;
         color: #448899;
-        /* background-color: seagreen; */
     }
-    
-    nav ul {
+    header nav ul {
         display: flex;
-        justify-content: end;
-        width: 50%;
-        /* background-color: blue; */
+        justify-content: space-between;
     }
-
-    nav ul a {
-        padding-right: 10px;
-        font-size: 1rem;
-        font-weight: 400;
+    header nav ul a {
+        padding: 0 10px;
         line-height: 54px;
         color: #666;
     }
+
+
+
     /* ==================== header end ==================== */
 
     /* ==================== menu start ==================== */
