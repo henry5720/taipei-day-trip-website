@@ -1,21 +1,13 @@
-# Confuse(week7-2022/04/13)
-###### tags: `#confuse`
-
-
-![](https://i.imgur.com/pRoMykV.jpg)
-
-
-## mysql
-- [[如何]將mysql_pool處理成class](https://stackoverflow.com/questions/32658679/how-to-create-a-mysql-connection-pool-or-any-better-way-to-initialize-the-multip)
-- [[如何]使用dotenv處理敏感資訊](https://learningsky.io/python-use-environmental-variables-to-hide-sensitive-information/)
-
-## JWT
-- [[如何]使JWT到期後更新](https://kknews.cc/zh-tw/code/a2pe58n.html)
-
-## javascript
-- [[什麼]是網頁的生命週期(load, DOMContentLoaded...)](https://javascript.info/onload-ondomcontentloaded)
-- [[什麼]是img.complete(w3schools)](https://www.w3schools.com/jsref/prop_img_complete.asp)
-- [[如何]實現載入動畫(document.readyState)](https://tw511.com/a/01/25322.html)
-
-## python
-- 使用@裝飾器-檢查登入狀態
+# Taipei Day Trip
+It is a travel e-commerce website that provides users with the ability to search for attractions and make reservations and make credit card payments.
+## Get started
+[Taipei Day Trip](http://35.174.219.25:3000/)
+- Test Account
+    - email: test@gmail.com
+    - password: 0973
+- Test Credit Card
+    - number: 4242 4242 4242 4242
+    - Expiration date: 01/23
+    - ccv: 123
+## Introduction
+### Index
