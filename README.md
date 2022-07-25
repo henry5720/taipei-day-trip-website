@@ -9,19 +9,19 @@ It is a travel e-commerce website that provides users with the ability to search
     - number: 4242 4242 4242 4242
     - Expiration date: 01/23
     - ccv: 123
-#### [Learning resources](https://github.com/henry5720/taipei-day-trip-website/tree/develop/confuse)
+- [Learning resources](https://github.com/henry5720/taipei-day-trip-website/tree/develop/confuse)
 
 ## Introduction
-### Index
+#### - Index
 ![](https://github.com/henry5720/taipei-day-trip-website/blob/develop/static/gif/index.gif)
-### Login & Payment
+#### - Login & Payment
 ![](https://github.com/henry5720/taipei-day-trip-website/blob/develop/static/gif/login%20and%20payment.gif)
-### RWD
+#### - RWD
 ![](https://github.com/henry5720/taipei-day-trip-website/blob/develop/static/gif/rwd.gif)
 ## Structure
-## User system
+#### - User system
 ![](https://i.imgur.com/HypZcRq.png)
-## Reservation
+#### - Reservation
 ![](https://i.imgur.com/ymv85Gg.png)
-## Payment
+#### - Payment
 ![](https://i.imgur.com/HCnOKs2.jpg)
