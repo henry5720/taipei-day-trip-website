@@ -11,3 +11,4 @@ It is a travel e-commerce website that provides users with the ability to search
     - ccv: 123
 ## Introduction
 ### Index
+![](./static/gif/login and payment.gif)
