@@ -11,3 +11,5 @@ It is a travel e-commerce website that provides users with the ability to search
     - ccv: 123
 ## Introduction
 ### Index
+
+![](https://github.com/henry5720/taipei-day-trip-website/blob/develop/static/gif/login%20and%20payment.gif)
