@@ -7,7 +7,7 @@ It is a travel e-commerce website that provides users with the ability to search
     - password: 0973
 - Test Credit Card
     - number: 4242 4242 4242 4242
-    - Expiration date: 01/23
+    - Expiration date: 12/25
     - ccv: 123
 - [Learning resources](https://github.com/henry5720/taipei-day-trip-website/tree/develop/confuse)
 
@@ -25,3 +25,13 @@ It is a travel e-commerce website that provides users with the ability to search
 ![](https://i.imgur.com/ymv85Gg.png)
 #### - Payment
 ![](https://i.imgur.com/HCnOKs2.jpg)
+
+## installtion
+#### 1. git clone [url]
+#### 2. cd taipei-day-trip-website
+#### 3. pip install -r requirements.txt
+#### 4. edit ./models/.envexample & save as ./models/.env
+    - ![image](https://github.com/henry5720/taipei-day-trip-website/assets/54354262/aa1da176-fa51-4f1e-8995-4d10502341d9)
+    - ![image](https://github.com/henry5720/taipei-day-trip-website/assets/54354262/3eab85bf-102d-4228-97be-f31a43486e6e)
+#### 5. eduit ./models/pool.py
+#### 6. mysql create database taipei_trip
