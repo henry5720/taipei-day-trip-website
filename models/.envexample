@@ -1,7 +1,2 @@
-HOST = '127.0.0.1'
-PORT = '3306'
-USER='root'
-PASSWORD = 'you_db_password'
-DATABASE = 'taipei_trip'
 PARTNER = 'your_partner_key'
 MERCHANT_ID = 'your_merchant_id'

@@ -25,3 +25,11 @@ It is a travel e-commerce website that provides users with the ability to search
 ![](https://i.imgur.com/ymv85Gg.png)
 #### - Payment
 ![](https://i.imgur.com/HCnOKs2.jpg)
+
+## installtion
+#### 1. git clone [url]
+#### 2.cd taipei-day-trip-website
+#### 3. pip install -r requirements.txt
+#### 4. edit ./models/.envexample & save as ./models/.env
+#### 5. eduit ./models/pool.py
+#### 6. mysql create database taipei_trip
