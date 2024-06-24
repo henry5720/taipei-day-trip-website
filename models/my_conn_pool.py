@@ -5,12 +5,13 @@ import mysql.connector.pooling
 load_dotenv()
 
 dbconfig={
-    "host":os.getenv("HOST"),
-    "port":os.getenv("PORT"),
-    "user":os.getenv("USER"),
-    "password":os.getenv("PASSWORD"),
-    "database":os.getenv("DATABASE")
+    "host":os.getenv("MYSQL_HOST"),
+    "port":os.getenv("MYSQL_PORT"),
+    "user":os.getenv("MYSQL_USER"),
+    "password":os.getenv("MYSQL_PASSWORD"),
+    "database":os.getenv("MYSQL_DATABASE")
 }
+print("dbconfig", dbconfig)
 
 class MySQLPool:
     # [初始化] 傳入變量(Variables)

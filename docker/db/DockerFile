@@ -1,0 +1,4 @@
+FROM mysql:latest
+
+# 将 init.sql 文件复制到容器中
+COPY ./init.sql /docker-entrypoint-initdb.d/init.sql
