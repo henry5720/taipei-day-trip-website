@@ -1,6 +1,6 @@
 """ Part 1 - 1：將景點資料存放至資料庫
     1. 抓取所有景點資料(with開啟json > mysql)
-    2. 
+    2.
     3. 存到mysql裡(json, csv, pandas?, numpy?, ...)
 """
 import json
