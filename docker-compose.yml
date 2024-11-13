@@ -1,6 +1,6 @@
-version: "3.8"  # optional since v1.27.0
 services:
   web:
+    container_name: web
     build:
       context: ./
       dockerfile: ./docker/web/DockerFile
@@ -9,12 +9,13 @@ services:
     depends_on:
       - db # 依賴數據庫服務
     environment:
-      - TZ=Asia/Taipei
+      TZ: Asia/Taipei
   db:
     # image: mysql:latest
+    container_name: db
     build:
-      context: ./docker/db/
-      dockerfile: ./DockerFile
+      context: ./
+      dockerfile: ./docker/db/DockerFile
     restart: unless-stopped
     volumes:
       - db_data:/var/lib/mysql
@@ -22,6 +23,18 @@ services:
       MYSQL_DATABASE: taipei_trip
       MYSQL_ROOT_PASSWORD: '0973'
     ports:
-      - "3307:3306"
+      - "3306:3306"
+  nginx:
+    container_name: nginx
+    build:
+      context: ./
+      dockerfile: ./docker/nginx/DockerFile
+    ports:
+      - 80:80
+      # - 443:443
+    depends_on:
+      - db # 依賴數據庫服務
+    environment:
+      TZ: Asia/Taipei
 volumes:
   db_data:

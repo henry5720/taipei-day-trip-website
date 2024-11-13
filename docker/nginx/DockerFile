@@ -1,0 +1,14 @@
+# FROM node AS frontend
+# WORKDIR /frontend
+# COPY frontend/package*.json ./
+# RUN yarn install
+# COPY frontend ./
+# RUN yarn build
+
+FROM nginx
+EXPOSE 80
+EXPOSE 443
+WORKDIR /etc/nginx/
+# COPY ./nginx/certs/ ./certs/
+# COPY --from=frontend /frontend/dist /usr/share/nginx/html
+COPY ./docker/nginx/conf/nginx.conf ./nginx.conf
