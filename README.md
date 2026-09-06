@@ -1,7 +1,7 @@
 # Taipei Day Trip
 It is a travel e-commerce website that provides users with the ability to search for attractions and make reservations and make credit card payments.
 ## Get started
-#### Live Demo : [Taipei Day Trip](http://104.196.254.243/)
+#### Live Demo : [Taipei Day Trip](http://129.80.13.225/)
 - Test Account
     - email: test@gmail.com
     - password: 0973
