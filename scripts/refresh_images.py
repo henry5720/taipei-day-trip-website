@@ -426,25 +426,28 @@ def cmd_rollback(args):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--db-host", default=os.getenv("MYSQL_HOST", "localhost"))
-    p.add_argument("--db-port", type=int, default=int(os.getenv("MYSQL_PORT", "3306")))
-    p.add_argument("--db-user", default=os.getenv("MYSQL_USER", "root"))
-    p.add_argument("--db-password", default=os.getenv("MYSQL_PASSWORD", "0973"))
-    p.add_argument("--db-name", default=os.getenv("MYSQL_DATABASE", "taipei_trip"))
-
     sub = p.add_subparsers(dest="cmd", required=True)
+
+    # DB 參數掛在各子命令底下，這樣 `plan --db-host db` 這種直覺寫法才會通。
+    db = argparse.ArgumentParser(add_help=False)
+    db.add_argument("--db-host", default=os.getenv("MYSQL_HOST", "localhost"),
+                    help="在 web container 裡跑要指定 db（compose service name）")
+    db.add_argument("--db-port", type=int, default=int(os.getenv("MYSQL_PORT", "3306")))
+    db.add_argument("--db-user", default=os.getenv("MYSQL_USER", "root"))
+    db.add_argument("--db-password", default=os.getenv("MYSQL_PASSWORD", "0973"))
+    db.add_argument("--db-name", default=os.getenv("MYSQL_DATABASE", "taipei_trip"))
 
     sf = sub.add_parser("fetch", help="把新版 open API 的景點資料存成本地快照")
     sf.add_argument("--out", default="attractions.json")
     sf.set_defaults(func=cmd_fetch)
 
-    sp = sub.add_parser("plan", help="產生對照表，不動 DB")
+    sp = sub.add_parser("plan", parents=[db], help="產生對照表，不動 DB")
     sp.add_argument("--out", default="mapping.json")
     sp.add_argument("--attractions", help="景點快照檔（省略則即時打 API）")
     sp.add_argument("--verify", action="store_true", help="逐張確認新圖真的回 image/*（慢很多）")
     sp.set_defaults(func=cmd_plan)
 
-    sa = sub.add_parser("apply", help="依對照表更新 scenery.file")
+    sa = sub.add_parser("apply", parents=[db], help="依對照表更新 scenery.file")
     sa.add_argument("--mapping", default="mapping.json")
     sa.add_argument("--attractions", help="景點快照檔（省略則即時打 API）")
     sa.add_argument("--backup", default="backup_scenery_file.json")
@@ -452,7 +455,7 @@ def main():
     sa.add_argument("--verify", action="store_true")
     sa.set_defaults(func=cmd_apply)
 
-    sr = sub.add_parser("rollback", help="用備份檔還原 scenery.file")
+    sr = sub.add_parser("rollback", parents=[db], help="用備份檔還原 scenery.file")
     sr.add_argument("--backup", default="backup_scenery_file.json")
     sr.set_defaults(func=cmd_rollback)
 
