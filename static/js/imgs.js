@@ -71,6 +71,7 @@ let search_imgs=async (page, keyword)=>{
             span2.appendChild(i2)
 
             // append content
+            set_img_fallback(img);
             img.src=data[i].images[0];
             span1.textContent=data[i].name;
             i1.textContent=data[i].mrt;

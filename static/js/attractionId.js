@@ -41,6 +41,7 @@ function render_page() {
         ol.appendChild(li2);
 
         // img src > scenery.images[i]
+        set_img_fallback(img);
         img.setAttribute("src", images[i]);
         if (i==0) {
             img.style.opacity=1;

@@ -13,6 +13,7 @@ window.addEventListener("load", async()=>{
             user_name.textContent=user_info.data.name;
 
             const check_img=document.querySelector(".check > img");
+            set_img_fallback(check_img);
             check_img.src=journey_info.data.attraction.images;
             const scene_name=document.querySelector("#scene_name");
             scene_name.textContent="台北一日遊 : "+journey_info.data.attraction.name;
