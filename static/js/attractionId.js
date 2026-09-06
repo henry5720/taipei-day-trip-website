@@ -3,7 +3,11 @@ let scenery={};
 async function get_data() {
     main_log("獲取資料");
     const pathname=await location.pathname;
-    const url="/api/"+pathname;
+    // pathname 開頭已經有斜線了，這裡再補一條會變成 /api//attraction/3，
+    // Flask 會 308 導回單斜線版本，而且 Location 給的是 http。
+    // 站台走 https 時（例如 cloudflare tunnel）那個 redirect 會被當成
+    // mixed content 擋掉，整頁資料都拿不到。
+    const url="/api"+pathname;
     const response=await fetch(url);
     const data=await response.json();
     scenery=data.data[0];
