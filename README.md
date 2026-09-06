@@ -13,11 +13,11 @@ It is a travel e-commerce website that provides users with the ability to search
 
 ## Introduction
 #### - Index
-![](https://github.com/henry5720/taipei-day-trip-website/blob/develop/static/gif/index.gif)
+![](https://raw.githubusercontent.com/henry5720/taipei-day-trip-website/main/static/gif/index.gif)
 #### - Login & Payment
-![](https://github.com/henry5720/taipei-day-trip-website/blob/develop/static/gif/login%20and%20payment.gif)
+![](https://raw.githubusercontent.com/henry5720/taipei-day-trip-website/main/static/gif/login%20and%20payment.gif)
 #### - RWD
-![](https://github.com/henry5720/taipei-day-trip-website/blob/develop/static/gif/rwd.gif)
+![](https://raw.githubusercontent.com/henry5720/taipei-day-trip-website/main/static/gif/rwd.gif)
 ## Structure
 #### - User system
 ![](https://i.imgur.com/HypZcRq.png)
